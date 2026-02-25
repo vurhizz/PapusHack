@@ -1,0 +1,3932 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Data/Icons/vurhizz hack.ico" type="image/x-icon">
+    <title>vurhizz hack - CS2 External</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(168, 85, 247, 0.3);
+            border-radius: 50%;
+            animation: particleFloat 20s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.15;
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .orb1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #9333ea, transparent);
+            top: -150px;
+            left: -150px;
+        }
+
+        .orb2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #db2777, transparent);
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 8s;
+        }
+
+        .orb3 {
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, #7c3aed, transparent);
+            top: 40%;
+            left: 60%;
+            animation-delay: 15s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(60px, -60px) scale(1.15);
+            }
+            66% {
+                transform: translate(-60px, 60px) scale(0.85);
+            }
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            height: 64px;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            gap: 24px;
+            position: relative;
+        }
+
+        .header-grid {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+            cursor: pointer;
+            height: 100%;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.8));
+        }
+
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            height: 100%;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 16px;
+            height: 40px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .social-btn:hover {
+            background: rgba(168, 85, 247, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .social-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .help-center {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            margin-left: 12px;
+        }
+
+        .help-center a {
+            padding: 0 16px;
+            height: 40px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .help-center a:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-btn {
+            padding: 0 16px;
+            height: 40px;
+            background: rgba(15, 15, 25, 0.8);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .nav-btn:hover {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .nav-btn.primary {
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 0 20px;
+        }
+
+        .nav-btn.primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .account-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            height: 100%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0 120px;
+        }
+
+        .hero h1 {
+            animation: fadeInUp 1s ease, glow 3s ease-in-out infinite;
+        }
+
+        .hero .subtitle {
+            animation: fadeInUp 1.2s ease;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+            }
+            50% {
+                filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
+            }
+        }
+
+        h1 {
+            font-size: 72px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, #e9d5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #a78bfa;
+            margin-bottom: 40px;
+            font-weight: 400;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .features {
+            padding: 60px 0 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 60px;
+            font-weight: 700;
+            color: #f3e8ff;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: rgba(15, 15, 25, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 16px;
+            padding: 35px 28px;
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease;
+            animation-fill-mode: both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(236, 72, 153, 0.4);
+            background: rgba(20, 20, 35, 0.7);
+            box-shadow: 0 20px 50px rgba(168, 85, 247, 0.15);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        .gallery {
+            padding: 60px 0 80px;
+        }
+
+        .gallery-container {
+            overflow: hidden;
+            border-radius: 16px;
+            background: rgba(15, 15, 25, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .thumbnails {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 20px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+            scroll-behavior: smooth;
+        }
+
+        .thumbnails::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.4);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 90%;
+            max-height: 80%;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(168, 85, 247, 0.3);
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f3e8ff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(236, 72, 153, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            background: rgba(236, 72, 153, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .nav-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .arrow-left, .arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(219, 39, 119, 0.8));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .arrow-left:hover, .arrow-right:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(147, 51, 234, 0.5);
+        }
+
+        .modal-arrow-left, .modal-arrow-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(219, 39, 119, 0.8));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1002;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+        }
+
+        .modal.fade-out .modal-content {
+            opacity: 0;
+        }
+
+        .modal-arrow-left {
+            left: 20px;
+        }
+
+        .modal-arrow-right {
+            right: 20px;
+        }
+
+        .modal-arrow-left:hover, .modal-arrow-right:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(147, 51, 234, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .arrow-left, .arrow-right {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            .modal-arrow-left, .modal-arrow-right {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                left: 10px;
+                right: 10px;
+            }
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(168, 85, 247, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(168, 85, 247, 0.5);
+        }
+
+        .dot.active {
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            box-shadow: 0 0 10px rgba(147, 51, 234, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .thumbnail {
+                width: 150px;
+                height: 120px;
+            }
+            .modal-content {
+                max-width: 95%;
+                max-height: 70%;
+            }
+            .close {
+                top: 10px;
+                right: 15px;
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+            .nav-dots {
+                bottom: 10px;
+                gap: 6px;
+            }
+            .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @keyframes iconPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #f3e8ff;
+            animation: fadeIn 2s ease;
+        }
+
+        .feature-description {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #a78bfa;
+            font-weight: 300;
+            animation: fadeIn 2.5s ease;
+        }
+
+        .utils-page, .purchase-page {
+            display: none;
+            padding: 60px 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .utils-page.active, .purchase-page.active {
+            display: block;
+        }
+
+        .util-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(15, 15, 25, 0.7);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .util-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 3px;
+        }
+
+        .util-description {
+            color: #a78bfa;
+            margin-bottom: 35px;
+            font-size: 16px;
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 16px 50px;
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(147, 51, 234, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+
+        .buy-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(147, 51, 234, 0.5);
+        }
+
+        .purchase-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(15, 15, 25, 0.7);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .form-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #f3e8ff;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            color: #e9d5ff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .subscription-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .subscription-btn {
+            padding: 12px 8px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subscription-btn:hover {
+            background: rgba(168, 85, 247, 0.15);
+        }
+
+        .subscription-btn.active {
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            border-color: transparent;
+            color: white;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(10, 10, 20, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(168, 85, 247, 0.5);
+            background: rgba(10, 10, 20, 0.8);
+        }
+
+        .price-display {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #a855f7;
+            margin: 20px 0;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: rgba(168, 85, 247, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 0 30px;
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .social-media {
+                order: 2;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .help-center {
+                order: 3;
+                width: 100%;
+                text-align: center;
+            }
+
+            .help-center a {
+                display: inline-block;
+                width: 80%;
+                max-width: 300px;
+            }
+
+            /* .nav-buttons {
+                order: 4;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+            } */
+
+            .nav-btn {
+                flex: 1 1 calc(50% - 10px);
+                max-width: calc(50% - 10px);
+                text-align: center;
+            }
+
+            .user-avatar {
+                position: static;
+                margin: 0 auto;
+                order: 0;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            .logo {
+                font-size: 24px;
+                gap: 8px;
+            }
+
+            .logo-icon {
+                width: 28px;
+                height: 28px;
+            }
+
+            .nav-btn, .help-center a {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .social-btn {
+                padding: 6px 10px;
+                font-size: 10px;
+                gap: 4px;
+            }
+
+            .social-icon {
+                width: 14px;
+                height: 14px;
+            }
+
+            .util-card, .purchase-form {
+                padding: 30px 20px;
+            }
+
+            .subscription-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .toggle-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .uniqueness-table th, .uniqueness-table td {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .uniqueness-table th {
+                font-size: 14px;
+            }
+
+            .toggle-btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+        }
+
+        .language-switcher {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-select {
+            padding: 0 12px;
+            height: 40px;
+            background: rgba(15, 15, 25, 0.8);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            appearance: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-image: 
+                linear-gradient(45deg, transparent 50%, #a855f7 50%),
+                linear-gradient(135deg, #a855f7 50%, transparent 50%);
+            background-position: calc(100% - 12px) center, calc(100% - 8px) center;
+            background-size: 5px 5px, 5px 5px;
+            background-repeat: no-repeat;
+            padding-right: 30px;
+        }
+
+        .language-select:hover {
+            background-color: rgba(168, 85, 247, 0.15);
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+
+        .language-select:focus {
+            outline: none;
+            border-color: #a855f7;
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.3);
+            background-color: rgba(168, 85, 247, 0.1);
+        }
+
+        .language-select option {
+            background: #161625;
+            color: #e9d5ff;
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .language-select {
+                padding: 8px 25px 8px 10px;
+                font-size: 12px;
+                background-size: 8px 8px;
+                background-position: calc(100% - 12px) center, calc(100% - 8px) center;
+            }
+            .language-switcher {
+                margin-left: 10px;
+            }
+        }
+        
+        .uniqueness-section {
+            padding: 60px 0 80px;
+        }
+
+        .uniqueness-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(15, 15, 25, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 16px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .uniqueness-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #f3e8ff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 14px;
+        }
+
+        .uniqueness-table th,
+        .uniqueness-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            vertical-align: top;
+        }
+
+        .uniqueness-table th {
+            font-size: 16px;
+            font-weight: 700;
+            color: #a855f7;
+            background: rgba(20, 20, 35, 0.5);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .uniqueness-table td {
+            font-weight: 400;
+            color: #e9d5ff;
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .uniqueness-table tr {
+            transition: all 0.4s ease-in-out;
+        }
+
+        .uniqueness-table tr:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .uniqueness-table tr.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        .uniqueness-table tr:hover {
+            background: rgba(25, 25, 45, 0.7);
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 768px) {
+            .uniqueness-table {
+                font-size: 12px;
+                display: table;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            .uniqueness-table th,
+            .uniqueness-table td {
+                padding: 6px;
+                max-width: 80px;
+                min-width: 0;
+            }
+
+            .uniqueness-table th {
+                font-size: 14px;
+            }
+
+            .uniqueness-container {
+                padding: 20px;
+            }
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(168, 85, 247, 0.5);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .user-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(236, 72, 153, 0.6);
+            border-color: rgba(236, 72, 153, 0.7);
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0.3;
+            }
+        }
+
+        .snowflake:nth-child(2n) {
+            animation-duration: 12s;
+            font-size: 0.8em;
+        }
+
+        .snowflake:nth-child(3n) {
+            animation-duration: 18s;
+            font-size: 1.2em;
+        }
+      
+        .secret-heart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.6;
+            cursor: pointer;
+            z-index: 10000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 20, 147, 1);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            animation: heartPulse 3s ease-in-out infinite;
+            pointer-events: auto;
+        }
+
+        .secret-heart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            opacity: 0.6;
+            cursor: pointer;
+            z-index: 10000;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(255, 20, 147, 1);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            animation: heartPulse 3s ease-in-out infinite;
+            pointer-events: auto;
+        }
+
+        .secret-heart:hover {
+            opacity: 1;
+            transform: scale(1.15);
+            animation: none;
+        }
+
+        .secret-heart::before {
+            content: '❤️';
+            position: absolute;
+            font-size: 70px;
+            z-index: -1;
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.6));
+        }
+
+        .secret-heart span {
+            position: relative;
+            z-index: 1;
+            text-transform: lowercase;
+            pointer-events: none;
+        }
+
+        @keyframes heartPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+
+        body.love-mode {
+            transition: all 1.5s ease;
+        }
+
+        body.love-mode .orb1 {
+            background: radial-gradient(circle, #ff1493, transparent) !important;
+            animation: floatLove 20s infinite ease-in-out !important;
+        }
+
+        body.love-mode .orb2 {
+            background: radial-gradient(circle, #ff69b4, transparent) !important;
+            animation: floatLove 25s infinite ease-in-out !important;
+        }
+
+        body.love-mode .orb3 {
+            background: radial-gradient(circle, #ff0080, transparent) !important;
+            animation: floatLove 22s infinite ease-in-out !important;
+        }
+
+        @keyframes floatLove {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(80px, -80px) scale(1.2);
+            }
+            66% {
+                transform: translate(-80px, 80px) scale(0.9);
+            }
+        }
+
+        body.love-mode .particle {
+            background: rgba(255, 20, 147, 0.6) !important;
+            box-shadow: 0 0 10px rgba(255, 20, 147, 0.8);
+        }
+
+        body.love-mode .logo,
+        body.love-mode h1 {
+            background: linear-gradient(135deg, #ff1493, #ff69b4, #ff1493) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.5));
+        }
+
+        body.love-mode .section-title {
+            background: linear-gradient(135deg, #ff69b4, #ff1493) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+
+        body.love-mode .feature-icon {
+            background: linear-gradient(135deg, #ff1493, #ff0080) !important;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
+        }
+
+        body.love-mode .buy-btn,
+        body.love-mode .toggle-btn {
+            background: linear-gradient(135deg, #ff1493, #ff0080) !important;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.5) !important;
+        }
+
+        body.love-mode .subscription-btn.active {
+            background: linear-gradient(135deg, #ff1493, #ff0080) !important;
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+        }
+
+        body.love-mode .feature-card {
+            background: rgba(15, 15, 25, 0.7);
+            border-color: rgba(255, 20, 147, 0.2) !important;
+        }
+
+        body.love-mode .feature-card:hover {
+            border-color: rgba(255, 20, 147, 0.6) !important;
+            background: rgba(20, 20, 35, 0.8) !important;
+            box-shadow: 0 20px 50px rgba(255, 20, 147, 0.3) !important;
+        }
+
+        body.love-mode .social-btn,
+        body.love-mode .nav-btn,
+        body.love-mode .help-center a {
+            border-color: rgba(255, 20, 147, 0.3) !important;
+            background: rgba(255, 20, 147, 0.1) !important;
+        }
+
+        body.love-mode .social-btn:hover,
+        body.love-mode .nav-btn:hover,
+        body.love-mode .help-center a:hover {
+            border-color: rgba(255, 20, 147, 0.6) !important;
+            background: rgba(255, 20, 147, 0.2) !important;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3) !important;
+        }
+
+        body.love-mode .price-display {
+            color: #ff1493 !important;
+            text-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+        }
+
+        body.love-mode .thumbnail:hover {
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.6) !important;
+        }
+
+        body.love-mode .arrow-left,
+        body.love-mode .arrow-right,
+        body.love-mode .modal-arrow-left,
+        body.love-mode .modal-arrow-right {
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.9), rgba(255, 0, 128, 0.9)) !important;
+        }
+
+        .heart-explosion {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: heartFloat 2s ease-out forwards;
+            font-size: 30px;
+        }
+
+        .notifications-wrapper {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .notifications-bell {
+            width: 40px;
+            height: 40px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .notifications-bell:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .notifications-bell svg {
+            width: 20px;
+            height: 20px;
+            fill: #e9d5ff;
+        }
+
+        .notifications-bell:hover svg {
+            fill: #a855f7;
+        }
+
+        .notifications-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+            pointer-events: none;
+            transform: translate(0, 0);
+        }
+
+        .notifications-badge::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent);
+            opacity: 0.6;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .notifications-dropdown {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 380px;
+            max-height: 500px;
+            background: rgba(15, 15, 25, 0.98);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            animation: dropdownSlideIn 0.3s ease;
+        }
+
+        .notifications-dropdown.active {
+            display: flex;
+        }
+
+        @keyframes dropdownSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .notifications-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notifications-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f3e8ff;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .notifications-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .notifications-action-btn {
+            padding: 4px 10px;
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            color: #e9d5ff;
+            font-size: 11px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .notifications-action-btn:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.4);
+        }
+
+        .notifications-list {
+            overflow-y: auto;
+            max-height: 400px;
+            padding: 8px;
+        }
+
+        .notifications-list::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .notifications-list::-webkit-scrollbar-track {
+            background: rgba(168, 85, 247, 0.05);
+            border-radius: 3px;
+        }
+
+        .notifications-list::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.3);
+            border-radius: 3px;
+        }
+
+        .notifications-list::-webkit-scrollbar-thumb:hover {
+            background: rgba(168, 85, 247, 0.5);
+        }
+
+        .notification-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: rgba(20, 20, 35, 0.5);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .notification-item:hover {
+            background: rgba(25, 25, 45, 0.7);
+            border-color: rgba(168, 85, 247, 0.3);
+            transform: translateX(4px);
+        }
+
+        .notification-item.unread {
+            background: rgba(168, 85, 247, 0.08);
+            border-color: rgba(168, 85, 247, 0.25);
+        }
+
+        .notification-item.unread::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+        }
+
+        .notification-item.unread .notification-content {
+            padding-left: 12px;
+        }
+
+        .notification-type {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .notification-type.info {
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+        }
+
+        .notification-type.success {
+            background: rgba(23, 235, 100, 0.2);
+            color: #86efac;
+        }
+
+        .notification-type.warning {
+            background: rgba(248, 124, 23, 0.2);
+            color: #fdba74;
+        }
+
+        .notification-type.error {
+            background: rgba(245, 26, 26, 0.2);
+            color: #fca5a5;
+        }
+
+        .notification-type.banned {
+            background: rgba(220, 38, 38, 0.22);
+            color: #f87171;
+        }
+
+        .notification-item-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #f3e8ff;
+            margin-bottom: 4px;
+        }
+
+        .notification-item-message {
+            font-size: 12px;
+            color: #a78bfa;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .notification-item-time {
+            font-size: 10px;
+            color: #6b7280;
+            margin-top: 4px;
+        }
+
+        .notifications-empty {
+            padding: 40px 20px;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .notifications-empty svg {
+            width: 48px;
+            height: 48px;
+            fill: #374151;
+            margin-bottom: 12px;
+        }
+
+        /* Модальное окно для полного просмотра уведомления */
+        .notification-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .notification-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .notification-modal-content {
+            background: rgba(15, 15, 25, 0.95);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .notification-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #fca5a5;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .notification-modal-close:hover {
+            background: rgba(239, 68, 68, 0.4);
+            border-color: rgba(239, 68, 68, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .notification-modal-header {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .notification-modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f3e8ff;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+            padding-right: 40px;
+        }
+
+        .notification-modal-meta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .notification-modal-message {
+            font-size: 15px;
+            color: #e9d5ff;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .notification-modal-actions {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(168, 85, 247, 0.2);
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .notification-modal-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+        }
+
+        .notification-modal-btn.delete {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+
+        .notification-modal-btn.delete:hover {
+            background: rgba(239, 68, 68, 0.3);
+            border-color: rgba(239, 68, 68, 0.5);
+        }
+
+        .notification-modal-btn.close {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #e9d5ff;
+        }
+
+        .notification-modal-btn.close:hover {
+            background: rgba(168, 85, 247, 0.2);
+            border-color: rgba(168, 85, 247, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .notifications-dropdown {
+                width: calc(100vw - 40px);
+                right: -20px;
+            }
+            
+            .notifications-bell {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .notifications-bell svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .notification-modal-content {
+                padding: 20px;
+                width: 95%;
+            }
+            
+            .notification-modal-title {
+                font-size: 20px;
+            }
+        }
+
+        @keyframes heartFloat {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty)) scale(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+    <!-- <div class="secret-heart" id="secretHeart" onclick="activateLoveMode(event)">
+        <span>lucifer</span>
+    </div> -->
+
+    <div class="container">
+        <header>
+            <div class="header-grid">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="../Data/Icons/vurhizz hack.png" alt="vurhizz hack Icon" class="logo-icon">
+                        <span class="logo-text">vurhizz hack</span>
+                    </div>
+                </div>
+
+                <div class="nav-center">
+                    <div class="nav-buttons">
+                        <a href="#" class="nav-btn" onclick="showutils(event)">OUR PRODUCTS</a>
+                                                    <a href="register.php" class="nav-btn">REGISTER</a>
+                            <a href="login.php" class="nav-btn">LOGIN</a>
+                                            </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="social-media">
+                        <a href="https://t.me/vurhizz hack" class="social-btn" target="_blank" rel="noopener noreferrer">
+                            Telegram
+                        </a>
+                        <a href="https://www.youtube.com/@vurhizz hack" class="social-btn" target="_blank" rel="noopener noreferrer">
+                            YouTube
+                        </a>
+                    </div>
+
+                    <div class="help-center">
+                        <a href="../Help/index.html" class="help-center-link">Help Center</a>
+                    </div>
+
+                    
+                    <div class="account-section">
+                        
+                        <div class="language-switcher">
+                            <select id="languageSelect" class="language-select" onchange="changeLanguage(this.value)">
+                                <option value="en">English</option>
+                                <option value="ru">Русский</option>
+                                <option value="uk">Українська</option>
+                                <option value="de">Deutsch</option>
+                                <option value="zh">中文</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="mainPage">
+            <section class="hero">
+                <h1>vurhizz hack</h1>
+                <p class="subtitle">One of the best external utils for CS2</p>
+            </section>
+
+        <section class="features">
+            <h2 class="section-title">Why Choose vurhizz?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Security</h3>
+                    <p class="feature-description">We focus on the security of our users' accounts and strive for maximum reliability.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">Affordable Prices</h3>
+                    <p class="feature-description">Our util prices are quite low compared to others on the market.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Easy to Use</h3>
+                    <p class="feature-description">Our installer and util interface is beautiful and simple, you won't get lost in it.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Auto Update System</h3>
+                    <p class="feature-description">We update our Util in the util in up to 20 minutes after a game update.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 class="feature-title">Customization & Design</h3>
+                    <p class="feature-description">Each feature and visual element can be customized - from keybinds and colors to the full UI style of the util menu.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Performance Optimization</h3>
+                    <p class="feature-description">One of the best optimized external utils - minimal CPU usage, stable FPS and smooth performance even on low-end PCs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">Most Advanced External</h3>
+                    <p class="feature-description">The most feature-rich external on the market with internal-like functionality and 180° FOV aimbot capabilities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3 class="feature-title">Active Development</h3>
+                    <p class="feature-description">Constant updates, new features, and responsive support team dedicated to improving the experience.</p>
+                </div>
+            </div>
+        </section>
+
+            <section class="gallery">
+                <h2 class="section-title">Gallery</h2>
+                <div class="gallery-container">
+                    <button class="arrow-left" onclick="scrollThumbs('left')">&lt;</button>
+                    <div class="thumbnails" id="thumbnails">
+                        <img src="Data/Pics/pic1.jpg" alt="Gallery 1" onclick="openModal(1)" class="thumbnail">
+                        <img src="Data/Pics/pic2.jpg" alt="Gallery 2" onclick="openModal(2)" class="thumbnail">
+                        <img src="Data/Pics/pic3.jpg" alt="Gallery 3" onclick="openModal(3)" class="thumbnail">
+                        <img src="Data/Pics/pic4.jpg" alt="Gallery 4" onclick="openModal(4)" class="thumbnail">
+                        <img src="Data/Pics/pic5.jpg" alt="Gallery 5" onclick="openModal(5)" class="thumbnail">
+                        <img src="Data/Pics/pic6.jpg" alt="Gallery 6" onclick="openModal(6)" class="thumbnail">
+                        <img src="Data/Pics/pic7.jpg" alt="Gallery 7" onclick="openModal(7)" class="thumbnail">
+                        <img src="Data/Pics/pic8.jpg" alt="Gallery 8" onclick="openModal(8)" class="thumbnail">
+                        <img src="Data/Pics/pic9.jpg" alt="Gallery 9" onclick="openModal(9)" class="thumbnail">
+                        <img src="Data/Pics/pic10.jpg" alt="Gallery 10" onclick="openModal(10)" class="thumbnail">
+                        <img src="Data/Pics/pic11.jpg" alt="Gallery 11" onclick="openModal(11)" class="thumbnail">
+                        <img src="Data/Pics/pic12.jpg" alt="Gallery 12" onclick="openModal(12)" class="thumbnail">
+                    </div>
+                    <button class="arrow-right" onclick="scrollThumbs('right')">&gt;</button>
+                </div>
+            </section>
+
+            <section class="uniqueness-section">
+                <h2 class="section-title">Why Our util Stands Out</h2>
+                <div class="uniqueness-container">
+                    <table class="uniqueness-table" id="uniquenessTable">
+                        <thead>
+                            <tr>
+                                <th>Function</th>
+                                <th>Description</th>
+                                <th>Why Unique in Our util</th>
+                                <th>In Other External utils</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sound ESP</td>
+                                <td>Detects when you can hear enemy footsteps or actions, enhancing situational awareness.</td>
+                                <td>Technically challenging feature for external utils, implemented with precision for audio-based awareness.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr>
+                                <td>Zoom, Defuser, Buying, Ammo, Ping, Money, etc.</td>
+                                <td>Provides detailed enemy info including zoom, defuser, ammo, ping, money, and more.</td>
+                                <td>Tracks up to 10 attributes, including unique ones like ammo bars and ping, rivaling internal utils.</td>
+                                <td>Limited to basic attributes like zoom, defuser, or money.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Silent Aim with Parameters</td>
+                                <td>Advanced Silent Aim with customizable settings for enhanced precision.</td>
+                                <td>Includes WallForce for auto wallbangs and bSilent for smoother aim, emulating internal Silent Aim.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>FOV up to 180°</td>
+                                <td>Allows aimbot to function across the entire map with an adjustable field of view.</td>
+                                <td>Supports FOV up to 180°, covering the entire map, unlike typical restrictions.</td>
+                                <td>Limited to 30°–90° FOV.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Override FOV</td>
+                                <td>Change aimbot FOV on-the-fly with a hotkey during gameplay.</td>
+                                <td>Instantly adjust FOV from any value to any value (e.g., 10° to 180°) via hotkey for clutch moments.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Anti-Aim</td>
+                                <td>Disrupts enemy aim with Anti-Aim techniques, minus proper camera view.</td>
+                                <td>Effective against other external utils and weaker internals, a rare feature for externals.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Fake Rapid Fire</td>
+                                <td>Visually simulates firing up to 30 bullets per second with any weapon.</td>
+                                <td>Unique visual effect for creative gameplay, not found in any util.</td>
+                                <td>Not available, even in internal utils.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>27 Hitboxes + Override</td>
+                                <td>Highly precise aimbot targeting with 27 hitbox options and dynamic switching.</td>
+                                <td>Offers 27 hitboxes with an Override feature to change targets without menus, surpassing standard offerings.</td>
+                                <td>Up to 14 hitboxes.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Humanization</td>
+                                <td>Advanced humanization for RAGE and LEGIT modes to avoid detection.</td>
+                                <td>Detailed humanization ensures safer gameplay, unlike most external utils.</td>
+                                <td>Not used in most externals, making them less safe.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Knife/Zeus Bot</td>
+                                <td>Automates knife and Zeus fights for consistent wins.</td>
+                                <td>Exclusive feature ensuring dominance in knife rounds or Zeus battles.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Air/Flash & Visibility Check</td>
+                                <td>Ensures fully legit gameplay with checks for airborne enemies, flash effects, and visibility.</td>
+                                <td>Highly detailed settings combining multiple checks for precise legit play.</td>
+                                <td>Limited to either flash or visibility checks.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Hit Sound/Marker</td>
+                                <td>Audio and visual cues when you deal damage to enemies.</td>
+                                <td>Rare feature for externals, enhancing feedback for better gameplay awareness.</td>
+                                <td>Not commonly used; only in Spurdo.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Duck Peek Assist</td>
+                                <td>Improves aimbot accuracy during crouching, ported from internal utils.</td>
+                                <td>Near-perfect port of an internal util feature, unique to our external util.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>FOV Changer</td>
+                                <td>Adjusts in-game field of view to mimic internal utils.</td>
+                                <td>Replicates internal util FOV customization, a rare feature for externals.</td>
+                                <td>Rarely available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Kill Effect</td>
+                                <td>Adds visual effects on kills for montage-style gameplay.</td>
+                                <td>Unique feature for montage creation, fully customizable, not found in serious utils.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Motion Bars</td>
+                                <td>Adds cinematic motion bar effects for a movie-like experience.</td>
+                                <td>Exclusive feature for montage-style gameplay, fully customizable.</td>
+                                <td>Not available.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Radar Hack with In-Game Radar</td>
+                                <td>Displays enemies on the in-game radar, not an overlay.</td>
+                                <td>Uses the in-game radar for a seamless experience, unlike typical external overlays.</td>
+                                <td>Typically uses external overlay windows.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>Custom Crosshair</td>
+                                <td>Design your own crosshair, from simple to complex designs.</td>
+                                <td>Highly customizable crosshair creation, a unique feature for external utils.</td>
+                                <td>Not commonly available; only in Spurdo.</td>
+                            </tr>
+                            <tr class="hidden">
+                                <td>35 Themes + Custom</td>
+                                <td>Fully customize the util menu’s look, from colors to backgrounds.</td>
+                                <td>Offers 35 themes plus full customization, giving complete control over the UI.</td>
+                                <td>Not available.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="toggle-btn" id="toggleTable" onclick="toggleTable()">Show More</button>
+                </div>
+            </section>
+
+            <div id="modal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImg">
+                <div class="nav-dots" id="navDots"></div>
+                <button class="modal-arrow-left" onclick="changeImg(-1)">&lt;</button>
+                <button class="modal-arrow-right" onclick="changeImg(1)">&gt;</button>
+            </div>
+        </div>
+
+        <div id="utilsPage" class="utils-page">
+            <button class="back-btn" onclick="showMain(event)">Back</button>
+            <div class="util-card">
+                <h2 class="util-title">CS2</h2>
+                <p class="util-description">Premium external util for Counter-Strike 2</p>
+                <button class="buy-btn" id="buyBtn">Send Buy Request</button>
+            </div>
+        </div>
+
+        <div id="purchasePage" class="purchase-page">
+            <button class="back-btn" onclick="showutils(event)">🔙 Back</button>
+            <div class="purchase-form">
+                <h2 class="form-title">Send Buy Request</h2>
+                
+                <div class="form-group">
+                    <label class="form-label">Select Subscription Duration</label>
+                    <div class="subscription-options">
+                        <button class="subscription-btn active" onclick="selectPlan(this, 3, '7 days')">7 days - 3€</button>
+                        <button class="subscription-btn" onclick="selectPlan(this, 4, '14 days')">14 days - 4€</button>
+                        <button class="subscription-btn" onclick="selectPlan(this, 7, '1 month')">1 month - 7€</button>
+                        <button class="subscription-btn" onclick="selectPlan(this, 12, '2 months')">2 months - 12€</button>
+                        <button class="subscription-btn" onclick="selectPlan(this, 20, '6 months')">6 months - 20€</button>
+                        <button class="subscription-btn" onclick="selectPlan(this, 75, 'Lifetime')">Lifetime - 75€</button>
+                    </div>
+                </div>
+
+                <div class="price-display">Price: <span id="priceValue">3</span> €</div>
+
+                <div class="form-group">
+                    <label class="form-label">Enter Your Discord Username</label>
+                    <input type="text" id="discord-username" class="form-input" placeholder="username">
+                </div>
+
+                <button class="buy-btn" style="width: 100%; margin-top: 10px;" onclick="submitPurchase()">Purchase</button>
+                <div id="purchase-message" class="purchase-message" style="display: none;">
+                    <p>Please write <code>_romkar_</code> in Discord to proceed with payment, or they will contact you.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="notification-modal" id="notificationModal">
+            <div class="notification-modal-content">
+                <div class="notification-modal-close" id="notificationModalClose">&times;</div>
+                <div class="notification-modal-header">
+                    <h3 class="notification-modal-title" id="modalNotificationTitle"></h3>
+                    <div class="notification-modal-meta">
+                        <span class="notification-type" id="modalNotificationType"></span>
+                        <span class="notification-item-time" id="modalNotificationTime"></span>
+                    </div>
+                </div>
+                <div class="notification-modal-message" id="modalNotificationMessage"></div>
+                <div class="notification-modal-actions">
+                    <button class="notification-modal-btn delete" id="modalDeleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p style="color: #6b7280; font-size: 13px;">vurhizzhack.com © 2026</p>
+            <p style="color: #6b7280; font-size: 13px; margin-top: 10px;">
+                Credits:<br>
+                Website: Assisted by 
+                <a href="https://exynteria.ilesik.com/account.php?user=whoise1337" 
+                style="color: #a855f7; text-decoration: none; transition: all 0.2s;">
+                Whoise
+                </a> 
+                with creation<br>
+                Beta Testers: 
+                <a href="https://exynteria.ilesik.com/account.php?user=megison1789" style="color: #a855f7; text-decoration: none; transition: all 0.2s;">megison1789</a>, 
+                <a href="https://exynteria.ilesik.com/account.php?user=xqzme" style="color: #a855f7; text-decoration: none; transition: all 0.2s;">xqzme</a><br>
+                Ideas Helpers: 
+                <a href="https://exynteria.ilesik.com/account.php?user=megison1789" style="color: #a855f7; text-decoration: none; transition: all 0.2s;">megison1789</a>, 
+                <a href="https://exynteria.ilesik.com/account.php?user=xqzme" style="color: #a855f7; text-decoration: none; transition: all 0.2s;">xqzme</a><br>
+                Logo and Intro: <a href="https://exynteria.ilesik.com/account.php?user=ZmogusTapke007" style="color: #a855f7; text-decoration: none; transition: all 0.2s;">ZmogusTapke</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function showMain(e) {
+            e.preventDefault();
+            document.getElementById('mainPage').style.display = 'block';
+            document.getElementById('utilsPage').classList.remove('active');
+            document.getElementById('purchasePage').classList.remove('active');
+        }
+
+        function showutils(e) {
+            e.preventDefault();
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('utilsPage').classList.add('active');
+            document.getElementById('purchasePage').classList.remove('active');
+        }
+
+        function showPurchase(e) {
+            e.preventDefault();
+            document.getElementById('utilsPage').classList.remove('active');
+            document.getElementById('purchasePage').classList.add('active');
+        }
+
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particles.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        let selectedDuration = '7 days';
+
+        function selectPlan(btn, price, duration) {
+            document.querySelectorAll('.subscription-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('priceValue').textContent = price;
+            selectedDuration = duration;
+        }
+
+        async function submitPurchase() {
+            const discordUsername = document.getElementById("discord-username").value;
+            const priceValue = document.getElementById("priceValue").textContent;
+
+            if (!discordUsername) {
+                alert("Please enter your Discord username!");
+                return;
+            }
+
+            document.getElementById("purchase-message").style.display = "block";
+
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = "util/Buy/submit_purchase.cgi";
+            form.style.display = "none";
+
+            const durationInput = document.createElement("input");
+            durationInput.type = "hidden";
+            durationInput.name = "duration";
+            durationInput.value = selectedDuration;
+            form.appendChild(durationInput);
+
+            const priceInput = document.createElement("input");
+            priceInput.type = "hidden";
+            priceInput.name = "price";
+            priceInput.value = priceValue;
+            form.appendChild(priceInput);
+
+            const discordInput = document.createElement("input");
+            discordInput.type = "hidden";
+            discordInput.name = "discord";
+            discordInput.value = discordUsername;
+            form.appendChild(discordInput);
+
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        let currentImgIndex = 0;
+        const images = ['Data/Pics/pic1.jpg', 'Data/Pics/pic2.jpg', 'Data/Pics/pic3.jpg', 'Data/Pics/pic4.jpg', 'Data/Pics/pic5.jpg', 'Data/Pics/pic6.jpg', 'Data/Pics/pic7.jpg', 'Data/Pics/pic8.jpg', 'Data/Pics/pic9.jpg', 'Data/Pics/pic10.jpg', 'Data/Pics/pic11.jpg', 'Data/Pics/pic12.jpg'];
+
+        function openModal(index) {
+            currentImgIndex = index - 1;
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modalImg');
+            modalContent.src = images[currentImgIndex];
+            modal.classList.add('fade-out');
+            setTimeout(() => {
+                modalContent.src = images[currentImgIndex]; 
+                modal.classList.remove('fade-out');
+            }, 150);
+            modal.style.display = 'block';
+            updateDots();
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function updateDots() {
+            const dotsContainer = document.getElementById('navDots');
+            dotsContainer.innerHTML = '';
+            images.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'dot' + (i === currentImgIndex ? ' active' : '');
+                dot.onclick = () => {
+                    currentImgIndex = i;
+                    document.getElementById('modalImg').src = images[i];
+                    updateDots();
+                };
+                dotsContainer.appendChild(dot);
+            });
+        }
+
+        function scrollThumbs(direction) {
+            const thumbnails = document.getElementById('thumbnails');
+            const scrollAmount = 220;
+            const start = thumbnails.scrollLeft;
+            const target = direction === 'left' ? start - scrollAmount : start + scrollAmount;
+            const duration = 500;
+            const startTime = performance.now();
+
+            function animateScroll(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const ease = 1 - Math.pow(1 - progress, 3);
+                thumbnails.scrollLeft = start + (target - start) * ease;
+
+                if (progress < 1) {
+                    requestAnimationFrame(animateScroll);
+                }
+            }
+
+            requestAnimationFrame(animateScroll);
+        }
+
+        function changeImg(direction) {
+            event.stopPropagation();
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modalImg');
+            modal.classList.add('fade-out');
+            setTimeout(() => {
+                currentImgIndex = (currentImgIndex + direction + images.length) % images.length;
+                modalContent.src = images[currentImgIndex];
+                modal.classList.remove('fade-out'); 
+                updateDots();
+            }, 150);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target === modal || event.target.classList.contains('close') || event.target.closest('.close')) {
+                closeModal();
+            }
+        };
+        
+        function toggleTable() {
+            const rows = document.querySelectorAll('.uniqueness-table tbody tr.hidden');
+            const toggleBtn = document.getElementById('toggleTable');
+            const lang = localStorage.getItem('language') || 'en';
+            const t = translations[lang];
+
+            const isShowing = rows.length > 0;
+
+            if (isShowing) {
+                rows.forEach((row, idx) => {
+                    const index = idx + 2;
+                    const cells = row.querySelectorAll('td');
+
+                    row.style.display = 'table-row';
+
+                    setTimeout(() => {
+                        row.classList.remove('hidden');
+
+                        let data;
+                        switch (index) {
+                            case 2: data = t.tableRows.silentAim; break;
+                            case 3: data = t.tableRows.fov180; break;
+                            case 4: data = t.tableRows.overrideFov; break;
+                            case 5: data = t.tableRows.antiAim; break;
+                            case 6: data = t.tableRows.fakeRapidFire; break;
+                            case 7: data = t.tableRows.hitboxes; break;
+                            case 8: data = t.tableRows.humanization; break;
+                            case 9: data = t.tableRows.knifeBot; break;
+                            case 10: data = t.tableRows.airFlashCheck; break;
+                            case 11: data = t.tableRows.hitSound; break;
+                            case 12: data = t.tableRows.duckPeek; break;
+                            case 13: data = t.tableRows.fovChanger; break;
+                            case 14: data = t.tableRows.killEffect; break;
+                            case 15: data = t.tableRows.motionBars; break;
+                            case 16: data = t.tableRows.radarHack; break;
+                            case 17: data = t.tableRows.customCrosshair; break;
+                            case 18: data = t.tableRows.themes; break;
+                        }
+
+                        if (data) {
+                            cells[0].textContent = data.function;
+                            cells[1].textContent = data.description;
+                            cells[2].textContent = data.unique;
+                            cells[3].textContent = data.other;
+                        }
+                    }, idx * 50);
+                });
+
+                toggleBtn.textContent = t.showLess;
+            } else {
+                document.querySelectorAll('.uniqueness-table tbody tr:not(:nth-child(-n+2))').forEach(row => {
+                    row.classList.add('hidden');
+                    setTimeout(() => {
+                        row.style.display = 'none';
+                    }, 200);
+                });
+
+                toggleBtn.textContent = t.showMore;
+            }
+        }
+
+        const translations = {
+            en: {
+                logoText: "vurhizz hack",
+                heroTitle: "vurhizz hack CS2",
+                heroSubtitle: "One of the best external utils for CS2",
+                sectionWhy: "Why Choose vurhizz hack?",
+                featureSecurity: "Security",
+                featureSecurityDesc: "We focus on the security of our users' accounts and strive for maximum reliability.",
+                featureAffordable: "Affordable Prices",
+                featureAffordableDesc: "Our util prices are quite low compared to others on the market.",
+                featureEasy: "Easy to Use",
+                featureEasyDesc: "Our installer and util interface is beautiful and simple, you won't get lost in it.",
+                featureAutoUpdate: "Auto Update System",
+                featureAutoUpdateDesc: "We update our Util in the util in up to 20 minutes after a game update.",
+                featureCustomization: "Customization & Design",
+                featureCustomizationDesc: "Each feature and visual element can be customized - from keybinds and colors to the full UI style of the util menu.",
+                featurePerformance: "Performance Optimization",
+                featurePerformanceDesc: "One of the best optimized external utils - minimal CPU usage, stable FPS and smooth performance even on low-end PCs.",
+                featureAdvanced: "Most Advanced External",
+                featureAdvancedDesc: "The most feature-rich external util on the market with internal-like functionality and 180° FOV aimbot capabilities.",
+                featureActiveDev: "Active Development",
+                featureActiveDevDesc: "Constant updates, new features, and responsive support team dedicated to improving the experience.",
+                sectionGallery: "Gallery",
+                sectionUniqueness: "Why Our util Stands Out",
+                helpCenter: "Help Center",
+                navutils: "OUR PRODUCTS",
+                navDownload: "DOWNLOAD LAUNCHER",
+                navForum: "FORUM",
+                navAccount: "ACCOUNT",
+                navLogin: "LOGIN",
+                navLogout: "LOGOUT",
+                utilTitle: "CS2",
+                utilDesc: "Premium external util for Counter-Strike 2",
+                buySubscription: "Send Buy Request",
+                formTitle: "Send Buy Request",
+                formDurationLabel: "Select Subscription Duration",
+                subscription7d: "7 days",
+                subscription14d: "14 days",
+                subscription1m: "1 month",
+                subscription3m: "2 months",
+                subscription6m: "6 months",
+                subscriptionLifetime: "Lifetime",
+                formDiscordLabel: "Enter Your Discord Username",
+                emailError: "Please enter a valid email address. Valve-related (Steam, Valve, CS) and Russian services (Yandex, Mail.ru, etc.) are not supported.",
+                purchaseMessage: "Please write <code>_romkar_</code> in Discord to proceed with payment, or they will contact you.",
+                backBtn: "🔙 Back",
+                showMore: "Show More",
+                showLess: "Show Less",
+                notifications: "Notifications",
+                markAllRead: "Mark all read",
+                clearAll: "Clear all",
+                noNotifications: "No notifications",
+                notificationTypes: {
+                    info: "INFO",
+                    success: "SUCCESS",
+                    warning: "WARNING",
+                    error: "ERROR",
+                    banned: "ACCESS DENIED"
+                },
+                notificationModalTitle: "Notification Details",
+                notificationDelete: "Delete",
+                notificationClose: "Close",
+                notificationTimeJustNow: "Just now",
+                notificationTimeMinAgo: "min ago",
+                notificationTimeHoursAgo: "h ago",
+                notificationTimeDaysAgo: "d ago",
+                tableHeaders: ["Function", "Description", "Why Unique in vurhizz hack", "In Other External utils"],
+                tableRows: {
+                    soundESP: {
+                        function: "Sound ESP",
+                        description: "Detects when you can hear enemy footsteps or actions, enhancing situational awareness.",
+                        unique: "Technically challenging feature for external utils, implemented with precision for audio-based awareness.",
+                        other: "Not available."
+                    },
+                    zoomEtc: {
+                        function: "Zoom, Defuser, Buying, Ammo, Ping, Money, etc.",
+                        description: "Provides detailed enemy info including zoom, defuser, ammo, ping, money, and more.",
+                        unique: "Tracks up to 10 attributes, including unique ones like ammo bars and ping, rivaling internal utils.",
+                        other: "Limited to basic attributes like zoom, defuser, or money."
+                    },
+                    silentAim: {
+                        function: "Silent Aimbot with Parameters",
+                        description: "Advanced Silent Aimbot with customizable settings for enhanced precision.",
+                        unique: "Includes WallForce for auto wallbangs and bSilent for smoother aim, emulating internal Silent Aimbot.",
+                        other: "Not available."
+                    },
+                    fov180: {
+                        function: "Aimbot FOV up to 180°",
+                        description: "Allows Aimbot to function across the entire map with an adjustable field of view.",
+                        unique: "Supports FOV up to 180°, covering the entire map, unlike typical restrictions.",
+                        other: "Limited to 30°–90° FOV."
+                    },
+                    overrideFov: {
+                        function: "Override Aimbot FOV",
+                        description: "Change Aimbot FOV on-the-fly with a hotkey during gameplay.",
+                        unique: "Instantly adjust FOV from any value to any value (e.g., 10° to 180°) via hotkey for clutch moments.",
+                        other: "Not available."
+                    },
+                    antiAim: {
+                        function: "Anti-Aim",
+                        description: "Disrupts enemy aim with Anti-Aim techniques, minus proper camera view.",
+                        unique: "Effective against other external utils and weaker internals, a rare feature for externals.",
+                        other: "Not available."
+                    },
+                    fakeRapidFire: {
+                        function: "Fake Rapid Fire",
+                        description: "Visually simulates firing up to 30 bullets per second with any weapon.",
+                        unique: "Unique visual effect for creative gameplay, not found in any util.",
+                        other: "Not available, even in internal utils."
+                    },
+                    hitboxes: {
+                        function: "27 Aimbot Hitboxes + Override",
+                        description: "Highly precise Aimbot targeting with 27 hitbox options and dynamic switching.",
+                        unique: "Offers 27 hitboxes with an Override feature to change targets without menus, surpassing standard offerings.",
+                        other: "Up to 14 hitboxes."
+                    },
+                    humanization: {
+                        function: "Aimbot Humanization",
+                        description: "Advanced humanization for RAGE and LEGIT modes to avoid detection.",
+                        unique: "Detailed humanization ensures safer gameplay, unlike most external utils.",
+                        other: "Not used in most externals, making them less safe."
+                    },
+                    knifeBot: {
+                        function: "Knife/Zeus Bot",
+                        description: "Automates knife and Zeus fights for consistent wins.",
+                        unique: "Exclusive feature ensuring dominance in knife rounds or Zeus battles.",
+                        other: "Not available."
+                    },
+                    airFlashCheck: {
+                        function: "Air/Flash & Visibility Check",
+                        description: "Ensures fully legit gameplay with checks for airborne enemies, flash effects, and visibility.",
+                        unique: "Highly detailed settings combining multiple checks for precise legit play.",
+                        other: "Limited to either flash or visibility checks."
+                    },
+                    hitSound: {
+                        function: "Hit Sound/Marker",
+                        description: "Audio and visual cues when you deal damage to enemies.",
+                        unique: "Rare feature for externals, enhancing feedback for better gameplay awareness.",
+                        other: "Not commonly used; only in Spurdo."
+                    },
+                    duckPeek: {
+                        function: "Duck Peek Aimbot Assist",
+                        description: "Improves Aimbot accuracy during crouching, ported from internal utils.",
+                        unique: "Near-perfect port of an internal util feature, unique to vruhizz hack.",
+                        other: "Not available."
+                    },
+                    fovChanger: {
+                        function: "Aimbot FOV Changer",
+                        description: "Adjusts in-game field of view to mimic internal utils.",
+                        unique: "Replicates internal util FOV customization, a rare feature for externals.",
+                        other: "Rarely available."
+                    },
+                    killEffect: {
+                        function: "Kill Effect",
+                        description: "Adds visual effects on kills for montage-style gameplay.",
+                        unique: "Unique feature for montage creation, fully customizable, not found in serious utils.",
+                        other: "Not available."
+                    },
+                    motionBars: {
+                        function: "Motion Bars",
+                        description: "Adds cinematic motion bar effects for a movie-like experience.",
+                        unique: "Exclusive feature for montage-style gameplay, fully customizable.",
+                        other: "Not available."
+                    },
+                    radarHack: {
+                        function: "Radar Hack with In-Game Radar",
+                        description: "Displays enemies on the in-game radar, not an overlay.",
+                        unique: "Uses the in-game radar for a seamless experience, unlike typical external overlays.",
+                        other: "Typically uses external overlay windows."
+                    },
+                    customCrosshair: {
+                        function: "Custom Crosshair",
+                        description: "Design your own crosshair, from simple to complex designs.",
+                        unique: "Highly customizable crosshair creation, a unique feature for external utils.",
+                        other: "Not commonly available; only in Spurdo."
+                    },
+                    themes: {
+                        function: "35 Themes + Custom",
+                        description: "Fully customize the util menu’s look, from colors to backgrounds.",
+                        unique: "Offers 35 themes plus full customization, giving complete control over the UI.",
+                        other: "Not available."
+                    }
+                }
+            },
+            ru: {
+                logoText: "vurhizz hack",
+                heroTitle: "vurhizz hack CS2",
+                heroSubtitle: "Одна из лучших внешних утилит для CS2",
+                sectionWhy: "Почему выбирают vurhizz hack?",
+                featureSecurity: "Безопасность",
+                featureSecurityDesc: "Мы сосредоточены на безопасности аккаунтов наших пользователей и стремимся к максимальной надежности.",
+                featureAffordable: "Доступные цены",
+                featureAffordableDesc: "Наши цены на утилиты значительно ниже, чем у других на рынке.",
+                featureEasy: "Простота использования",
+                featureEasyDesc: "Наш установщик и интерфейс утилиты красивы и просты, вы не заблудитесь в них.",
+                featureAutoUpdate: "Автообновление системы",
+                featureAutoUpdateDesc: "Мы обновляем нашу систему в утилите в течение 20 минут после обновления игры.",
+                featureCustomization: "Настройка и дизайн",
+                featureCustomizationDesc: "Каждая функция и визуальный элемент могут быть настроены - от клавиш и цветов до полного стиля меню утилиты.",
+                featurePerformance: "Оптимизация производительности",
+                featurePerformanceDesc: "Один из лучших оптимизированных внешних утилит - минимальное использование CPU, стабильный FPS и плавная работа даже на слабых ПК.",
+                featureAdvanced: "Самая продвинутая внешняя утилита",
+                featureAdvancedDesc: "Самая насыщенная функциями внешняя утилита на рынке с функционалом уровня внутренних утилит и возможностями aimbot с FOV до 180°.",
+                featureActiveDev: "Активная разработка",
+                featureActiveDevDesc: "Постоянные обновления, новые функции и отзывчивая команда поддержки, работающая над улучшением продукта.",
+                sectionGallery: "Галерея",
+                sectionUniqueness: "Почему наша утилита выделяется",
+                helpCenter: "Центр помощи",
+                navutils: "НАШИ ПРОДУКТЫ",
+                navDownload: "СКАЧАТЬ ЛАНЧЕР",
+                navForum: "ФОРУМ",
+                navAccount: "АККАУНТ",
+                navLogin: "ВОЙТИ",
+                navLogout: "ВЫЙТИ",
+                utilTitle: "CS2",
+                utilDesc: "Премиум внешняя утилита для Counter-Strike 2",
+                buySubscription: "Отправть запрос на покупку",
+                formTitle: "Отправть запрос на покупку",
+                formDurationLabel: "Выберите длительность подписки",
+                subscription7d: "7 дней",
+                subscription14d: "14 дней",
+                subscription1m: "1 месяц",
+                subscription3m: "2 месяца",
+                subscription6m: "6 месяцев",
+                subscriptionLifetime: "Пожизненно",
+                formDiscordLabel: "Введите имя пользователя Discord",
+                emailError: "Пожалуйста, введите действительный адрес электронной почты. Адреса, связанные с Valve (Steam, Valve, CS) и российскими сервисами (Яндекс, Mail.ru и т.д.), не поддерживаются.",
+                purchaseMessage: "Пожалуйста, напишите <code>_romkar_</code> в Discord для продолжения оплаты, либо с вами свяжутся.",
+                backBtn: "🔙 Назад",
+                showMore: "Показать больше",
+                showLess: "Скрыть",
+                notifications: "Уведомления",
+                markAllRead: "Пометить все прочитанными",
+                clearAll: "Очистить все",
+                noNotifications: "Нет уведомлений",
+                notificationTypes: {
+                    info: "ИНФО",
+                    success: "УСПЕХ",
+                    warning: "ПРЕДУПРЕЖДЕНИЕ",
+                    error: "ОШИБКА",
+                    banned: "ДОСТУП ЗАПРЕЩЕН"
+                },
+                notificationModalTitle: "Детали уведомления",
+                notificationDelete: "Удалить",
+                notificationClose: "Закрыть",
+                notificationTimeJustNow: "Только что",
+                notificationTimeMinAgo: "мин назад",
+                notificationTimeHoursAgo: "ч назад",
+                notificationTimeDaysAgo: "д назад",
+                tableHeaders: ["Функция", "Описание", "Почему уникально в vurhizz hack", "В других внешних утилитах"],
+                tableRows: {
+                    soundESP: {
+                        function: "Sound ESP",
+                        description: "Обнаруживает, когда вы можете услышать шаги или действия врагов, улучшая осведомленность.",
+                        unique: "Технически сложная функция для внешних утилит, реализована с высокой точностью для аудиоосведомленности.",
+                        other: "Недоступно."
+                    },
+                    zoomEtc: {
+                        function: "Зум, Дефьюзер, Покупка, Боеприпасы, Пинг, Деньги и т.д.",
+                        description: "Предоставляет детальную информацию о врагах, включая зум, дефьюзер, боеприпасы, пинг, деньги и многое другое.",
+                        unique: "Отслеживает до 10 атрибутов, включая уникальные, такие как индикаторы боеприпасов и пинг, соперничая с внутренними утилитами.",
+                        other: "Ограничено базовыми атрибутами, такими как зум, дефьюзер или деньги."
+                    },
+                    silentAim: {
+                        function: "Сайлент-аймбот с параметрами",
+                        description: "Расширенный сайлент-аймбот с настраиваемыми настройками для повышения точности.",
+                        unique: "Включает WallForce для автоматических пробиваний стен и bSilent для более плавного прицеливания, имитируя внутренний сайлент-аймбот.",
+                        other: "Недоступно."
+                    },
+                    fov180: {
+                        function: "Поле зрения аймбота до 180°",
+                        description: "Позволяет аймботу работать на всей карте с регулируемым полем зрения.",
+                        unique: "Поддерживает поле зрения до 180°, охватывая всю карту, в отличие от типичных ограничений.",
+                        other: "Ограничено 30°–90° полем зрения."
+                    },
+                    overrideFov: {
+                        function: "Переопределение поля зрения аймбота",
+                        description: "Изменение поля зрения аймбота на лету с помощью хоткея во время игры.",
+                        unique: "Мгновенно регулирует поле зрения от любого значения до любого (например, 10° до 180°) через хоткей для ключевых моментов.",
+                        other: "Недоступно."
+                    },
+                    antiAim: {
+                        function: "Анти-Аим",
+                        description: "Нарушает прицеливание врагов с помощью техник Anti-Aim, без правильного вида камеры.",
+                        unique: "Эффективен против других внешних утилит и слабых внутренних, редкая функция для внешних.",
+                        other: "Недоступно."
+                    },
+                    fakeRapidFire: {
+                        function: "Fake Rapid Fire",
+                        description: "Визуально симулирует стрельбу до 30 пуль в секунду с любым оружием.",
+                        unique: "Уникальный визуальный эффект для креативной игры, не найденный в других утилитах.",
+                        other: "Недоступно, даже во внутренних утилитах."
+                    },
+                    hitboxes: {
+                        function: "27 хитбоксов аймбота + Переопределение",
+                        description: "Высокоточная наводка аймбота с 27 вариантами хитбоксов и динамическим переключением.",
+                        unique: "Предлагает 27 хитбоксов с функцией переопределения для изменения целей без меню, превосходя стандартные предложения.",
+                        other: "До 14 хитбоксов."
+                    },
+                    humanization: {
+                        function: "Гуманизация аймбота",
+                        description: "Расширенная гуманизация для режимов RAGE и LEGIT для избежания обнаружения.",
+                        unique: "Детализированная гуманизация обеспечивает более безопасную игру, в отличие от большинства внешних утилит.",
+                        other: "Не используется в большинстве внешних, делая их менее безопасными."
+                    },
+                    knifeBot: {
+                        function: "Бот для ножа/Зевса",
+                        description: "Автоматизирует бои с ножом и Зевсом для стабильных побед.",
+                        unique: "Эксклюзивная функция, гарантирующая доминирование в раундах с ножом или Зевсом.",
+                        other: "Недоступно."
+                    },
+                    airFlashCheck: {
+                        function: "Проверка воздуха/флеша и видимости",
+                        description: "Обеспечивает полностью легитимную игру с проверками на воздушных врагов, флеш-эффекты и видимость.",
+                        unique: "Высокодетализированные настройки, сочетающие несколько проверок для точной легитимной игры.",
+                        other: "Ограничено либо флеш-, либо видимость-проверками."
+                    },
+                    hitSound: {
+                        function: "Звук/маркер попадания",
+                        description: "Аудио- и визуальные подсказки при нанесении урона врагам.",
+                        unique: "Редкая функция для внешних, улучшающая обратную связь для лучшего осознания игры.",
+                        other: "Не часто используется; только в Spurdo."
+                    },
+                    duckPeek: {
+                        function: "Помощь при прицеливании аймбота в приседании",
+                        description: "Улучшает точность аймбота при приседании, перенесено из внутренних утилит.",
+                        unique: "Почти идеальная адаптация функции из внутренних утилит, уникальна для vurhizz hack.",
+                        other: "Недоступно."
+                    },
+                    fovChanger: {
+                        function: "FOV Changer",
+                        description: "Настраивает поле зрения в игре, имитируя внутренние утилиты.",
+                        unique: "Повторяет настройку поля зрения внутренних утилит, редкая функция для внешних.",
+                        other: "Редко доступно."
+                    },
+                    killEffect: {
+                        function: "Kill Effect",
+                        description: "Добавляет визуальные эффекты при убийствах для стилизованной игры.",
+                        unique: "Уникальная функция для создания монтажей, полностью настраиваемая, не встречается в серьезных утилитах.",
+                        other: "Недоступно."
+                    },
+                    motionBars: {
+                        function: "Motion Bars",
+                        description: "Добавляет кинематографические эффекты движущихся полос для кинематографического опыта.",
+                        unique: "Эксклюзивная функция для стилизованной игры, полностью настраиваемая.",
+                        other: "Недоступно."
+                    },
+                    radarHack: {
+                        function: "Радар с игровым радаром",
+                        description: "Отображает врагов на игровом радаре, а не в оверлее.",
+                        unique: "Использует игровой радар для бесшовного опыта, в отличие от типичных внешних оверлеев.",
+                        other: "Обычно использует окна внешних оверлеев."
+                    },
+                    customCrosshair: {
+                        function: "Custom Crosshair",
+                        description: "Создайте собственный прицел, от простого до сложного дизайна.",
+                        unique: "Высокая кастомизация создания прицела, уникальная функция для внешних утилит.",
+                        other: "Не часто доступно; только в Spurdo."
+                    },
+                    themes: {
+                        function: "35 тем + Пользовательские",
+                        description: "Полностью настройте внешний вид меню утилиты, от цветов до фона.",
+                        unique: "Предлагает 35 тем плюс полную кастомизацию, давая полный контроль над UI.",
+                        other: "Недоступно."
+                    }
+                }
+            },
+            uk: {
+                logoText: "vurhizz",
+                heroTitle: "vurhizz CS2",
+                heroSubtitle: "Одна із найкращих зовнішніх утіліт для CS2",
+                sectionWhy: "Чому обирають vurhizz hack?",
+                featureSecurity: "Безпека",
+                featureSecurityDesc: "Ми зосереджені на безпеці акаунтів наших користувачів і прагнемо максимальної надійності.",
+                featureAffordable: "Доступні ціни",
+                featureAffordableDesc: "Наші ціни на продукти значно нижчі, ніж у інших на ринку.",
+                featureEasy: "Простота використання",
+                featureEasyDesc: "Наш інсталятор і інтерфейс продукту красиві та прості, ви не загубитеся в них.",
+                featureAutoUpdate: "Автооновлення системи",
+                featureAutoUpdateDesc: "Ми оновлюємо нашу систему в утіліті протягом 20 хвилин після оновлення гри.",
+                featureCustomization: "Налаштування та дизайн",
+                featureCustomizationDesc: "Кожна функція та візуальний елемент можуть бути налаштовані - від клавіш і кольорів до повного стилю меню улітіи.",
+                featurePerformance: "Оптимізація продуктивності",
+                featurePerformanceDesc: "Один із найкращих оптимізованих зовнішніх утіліт - мінімальне використання CPU, стабільний FPS і плавна робота навіть на слабких ПК.",
+                featureAdvanced: "Найпросунутіша зовнішня утіліта",
+                featureAdvancedDesc: "Найбільш насичена функціями зовнішня утіліта на ринку з функціоналом рівня внутрішніх утіліт та можливостями aimbot з FOV до 180°.",
+                featureActiveDev: "Активна розробка",
+                featureActiveDevDesc: "Постійні оновлення, нові функції та чуйна команда підтримки, яка працює над покращенням продукту.",
+                sectionGallery: "Галерея",
+                sectionUniqueness: "Чому наш утіліта виділяється",
+                helpCenter: "Центр допомоги",
+                navutils: "НАШІ ПРОДУКТИ",
+                navDownload: "СКАЧАТИ ЛАНЧЕР",
+                navForum: "ФОРУМ",
+                navAccount: "АККАУНТ",
+                navLogin: "УВІЙТИ",
+                navLogout: "ВИЙТИ",
+                utilTitle: "CS2",
+                utilDesc: "Преміум зовнішній утіліта для Counter-Strike 2",
+                buySubscription: "Купити підписку",
+                formTitle: "Надіслати запит на купівлю",
+                formDurationLabel: "Надіслати запит на купівлю",
+                subscription7d: "7 днів",
+                subscription14d: "14 днів",
+                subscription1m: "1 місяць",
+                subscription3m: "2 місяці",
+                subscription6m: "6 місяців",
+                subscriptionLifetime: "Пожиттєво",
+                formDiscordLabel: "Введіть ім'я користувача Discord",
+                emailError: "Будь ласка, введіть дійсну адресу електронної пошти. Адреси, пов'язані з Valve (Steam, Valve, CS) і російськими сервісами (Яндекс, Mail.ru тощо), не підтримуються.",
+                purchaseMessage: "Будь ласка, напишіть <code>_romkar_</code> у Discord для продовження оплати, або з вами зв'яжуться.",
+                backBtn: "🔙 Назад",
+                showMore: "Показати більше",
+                showLess: "Сховати",
+                notifications: "Сповіщення",
+                markAllRead: "Позначити всі прочитаними",
+                clearAll: "Очистити все",
+                noNotifications: "Немає сповіщень",
+                notificationTypes: {
+                    info: "ІНФО",
+                    success: "УСПІХ",
+                    warning: "ПОПЕРЕДЖЕННЯ",
+                    error: "ПОМИЛКА",
+                    banned: "ДОСТУП ЗАБОРОНЕН"
+                },
+                notificationModalTitle: "Деталі сповіщення",
+                notificationDelete: "Видалити",
+                notificationClose: "Закрити",
+                notificationTimeJustNow: "Щойно",
+                notificationTimeMinAgo: "хв тому",
+                notificationTimeHoursAgo: "год тому",
+                notificationTimeDaysAgo: "днів тому",
+                tableHeaders: ["Функція", "Опис", "Чому унікально в vurhizz hack", "В інших зовнішніх утілітах"],
+                tableRows: {
+                    soundESP: {
+                        function: "Sound ESP",
+                        description: "Виявляє, коли ви можете почути кроки або дії ворогів, покращуючи обізнаність.",
+                        unique: "Технічно складна функція для зовнішніх утіліт, реалізована з високою точністю для аудіообізнаності.",
+                        other: "Недоступно."
+                    },
+                    zoomEtc: {
+                        function: "Зум, Деактиватор, Купівля, Боєприпаси, Пінг, Гроші тощо",
+                        description: "Надає детальну інформацію про ворогів, включаючи зум, деактиватор, боєприпаси, пінг, гроші та інше.",
+                        unique: "Відстежує до 10 атрибутів, включаючи унікальні, такі як смужки боєприпасів і пінг, конкуруючи з внутрішніми утіліт.",
+                        other: "Обмежено базовими атрибутами, такими як зум, деактиватор або гроші."
+                    },
+                    silentAim: {
+                        function: "Сайлент-аймбот з параметрами",
+                        description: "Розширений сайлент-аймбот з налаштовуваними параметрами для підвищення точності.",
+                        unique: "Включає WallForce для автоматичних пробивань стін і bSilent для плавнішого прицілювання, імітуючи внутрішній сайлент-аймбот.",
+                        other: "Недоступно."
+                    },
+                    fov180: {
+                        function: "Поле зору аймбота до 180°",
+                        description: "Дозволяє аймботу працювати на всій мапі з регулюваним полем зору.",
+                        unique: "Підтримує поле зору до 180°, охоплюючи всю мапу, на відміну від типових обмежень.",
+                        other: "Обмежено 30°–90° полем зору."
+                    },
+                    overrideFov: {
+                        function: "Перевизначення поля зору аймбота",
+                        description: "Зміна поля зору аймбота на льоту за допомогою хоткею під час гри.",
+                        unique: "Миттєво регулює поле зору від будь-якого значення до будь-якого (наприклад, 10° до 180°) через хоткей для ключових моментів.",
+                        other: "Недоступно."
+                    },
+                    antiAim: {
+                        function: "Анти-Айм",
+                        description: "Порушує прицілювання ворогів за допомогою технік Anti-Aim, без правильного виду камери.",
+                        unique: "Ефективний проти інших зовнішніх утіліт і слабких внутрішніх, рідкісна функція для зовнішніх.",
+                        other: "Недоступно."
+                    },
+                    fakeRapidFire: {
+                        function: "Fake Rapid Fire",
+                        description: "Візуально симулює стрільбу до 30 куль на секунду з будь-якою зброєю.",
+                        unique: "Унікальний візуальний ефект для креативної гри, не знайдений в інших утіліт.",
+                        other: "Недоступно, навіть у внутрішніх утіліт."
+                    },
+                    hitboxes: {
+                        function: "27 хітбоксів аймбота + Перевизначення",
+                        description: "Високоточна наводка аймбота з 27 варіантами хітбоксів і динамічним перемиканням.",
+                        unique: "Пропонує 27 хітбоксів з функцією перевизначення для зміни цілей без меню, перевершуючи стандартні пропозиції.",
+                        other: "До 14 хітбоксів."
+                    },
+                    humanization: {
+                        function: "Гуманізація аймбота",
+                        description: "Розширена гуманізація для режимів RAGE і LEGIT для уникнення виявлення.",
+                        unique: "Деталізована гуманізація забезпечує безпечнішу гру, на відміну від більшості зовнішніх утіліт.",
+                        other: "Не використовується в більшості зовнішніх, роблячи їх менш безпечними."
+                    },
+                    knifeBot: {
+                        function: "Бот для ножа/Зевса",
+                        description: "Автоматизує бої з ножем і Зевсом для стабільних перемог.",
+                        unique: "Ексклюзивна функція, яка гарантує домінування в раундах з ножем або Зевсом.",
+                        other: "Недоступно."
+                    },
+                    airFlashCheck: {
+                        function: "Перевірка повітря/флеша та видимості",
+                        description: "Гарантує повністю легітимну гру з перевірками на повітряних ворогів, ефекти флешів і видимість.",
+                        unique: "Високодеталізовані налаштування, що поєднують кілька перевірок для точної легітимної гри.",
+                        other: "Обмежено або флеш-, або видимість-перевірками."
+                    },
+                    hitSound: {
+                        function: "Звук/маркер ураження",
+                        description: "Аудіо- і візуальні підказки при нанесенні шкоди ворогам.",
+                        unique: "Рідкісна функція для зовнішніх, покращуючи зворотний зв'язок для кращого усвідомлення гри.",
+                        other: "Не часто використовується; тільки в Spurdo."
+                    },
+                    duckPeek: {
+                        function: "Допомога при прицілюванні аймбота в присіді",
+                        description: "Покращує точність аймбота під час присідання, перенесено з внутрішніх утіліт.",
+                        unique: "Майже ідеальна адаптація функції з внутрішніх утіліт, унікальна для vurhizz hack.",
+                        other: "Недоступно."
+                    },
+                    fovChanger: {
+                        function: "FOV changer",
+                        description: "Налаштовує поле зору в грі, імітуючи внутрішні утіліти.",
+                        unique: "Повторює налаштування поля зору внутрішніх утіліт, рідкісна функція для зовнішніх.",
+                        other: "Рідко доступно."
+                    },
+                    killEffect: {
+                        function: "Kill Effect",
+                        description: "Додає візуальні ефекти при убивствах для стилізованої гри.",
+                        unique: "Унікальна функція для створення монтажів, повністю налаштовувана, не зустрічається в серйозних утілітах.",
+                        other: "Недоступно."
+                    },
+                    motionBars: {
+                        function: "Motion Bars",
+                        description: "Додає кінематографічні ефекти рухомих смуг для кінематографічного досвіду.",
+                        unique: "Ексклюзивна функція для стилізованої гри, повністю налаштовувана.",
+                        other: "Недоступно."
+                    },
+                    radarHack: {
+                        function: "Радар із ігровим радаром",
+                        description: "Відображає ворогів на ігровому радарі, а не в оверлеї.",
+                        unique: "Використовує ігровий радар для безшовного досвіду, на відміну від типових зовнішніх оверлеїв.",
+                        other: "Зазвичай використовує вікна зовнішніх оверлеїв."
+                    },
+                    customCrosshair: {
+                        function: "Custom Crosshair",
+                        description: "Створіть власний приціл, від простого до складного дизайну.",
+                        unique: "Висока кастомізація створення прицілу, унікальна функція для зовнішніх утіліт.",
+                        other: "Не часто доступно; тільки в Spurdo."
+                    },
+                    themes: {
+                        function: "35 тем + Користувацькі",
+                        description: "Повністю налаштуйте вигляд меню чита, від кольорів до фону.",
+                        unique: "Пропонує 35 тем плюс повну кастомізацію, даючи повний контроль над UI.",
+                        other: "Недоступно."
+                    }
+                }
+            },
+            "de": {
+                "logoText": "vurhizz hack",
+                "heroTitle": "vurhizz hack CS2",
+                "heroSubtitle": "Eines der besten externen util für CS2",
+                "sectionWhy": "Warum vurhizz hack wählen?",
+                "featureSecurity": "Sicherheit",
+                "featureSecurityDesc": "Wir legen Wert auf die Sicherheit der Konten unserer Nutzer und streben maximale Zuverlässigkeit an.",
+                "featureAffordable": "Günstige Preise",
+                "featureAffordableDesc": "Unsere Produktpreise sind im Vergleich zu anderen auf dem Markt sehr niedrig.",
+                "featureEasy": "Einfach zu verwenden",
+                "featureEasyDesc": "Unser Installationsprogramm und die Benutzeroberfläche sind schön und einfach, Sie werden sich nicht verirren.",
+                "featureAutoUpdate": "Automatische System-Updates",
+                "featureAutoUpdateDesc": "Wir aktualisieren die util im util innerhalb von 20 Minuten nach einem Spiel-Update.",
+                "featureCustomization": "Anpassung & Design",
+                "featureCustomizationDesc": "Jede Funktion und jedes visuelle Element kann angepasst werden - von Tastenkombinationen und Farben bis hin zum gesamten UI-Stil des util-Menüs.",
+                "featurePerformance": "Leistungsoptimierung",
+                "featurePerformanceDesc": "Einer der bestoptimiereten externen utils - minimale CPU-Auslastung, stabiler FPS und flüssige Leistung auch auf schwachen PCs.",
+                featureAdvanced: "Fortschrittlichste Externe Util",
+                featureAdvancedDesc: "Die funktionsreichste externe Util auf dem Markt mit Funktionalität auf internem Niveau und 180° FOV Aimbot-Möglichkeiten.",
+                featureActiveDev: "Aktive Entwicklung",
+                featureActiveDevDesc: "Kontinuierliche Updates, neue Features und ein reaktionsschnelles Support-Team, das sich der Verbesserung widmet.",
+                "sectionGallery": "Galerie",
+                "sectionUniqueness": "Warum unser util heraussticht",
+                "helpCenter": "Hilfe-Center",
+                "navutils": "UNSERE PRODUKTE",
+                "navDownload": "DOWNLOAD LAUNCHER",
+                navForum: "FORUM",
+                navAccount: "KONTO",
+                navLogin: "ANMELDEN",
+                navLogout: "ABMELDEN",
+                "utilTitle": "CS2",
+                "utilDesc": "Premium externe util für Counter-Strike 2",
+                "buySubscription": "Anfrage auf Kauf senden",
+                "formTitle": "Anfrage auf Kauf senden",
+                "formDurationLabel": "Abo-Dauer auswählen",
+                "subscription7d": "7 Tage",
+                "subscription14d": "14 Tage",
+                "subscription1m": "1 Monat",
+                "subscription3m": "2 Monate",
+                "subscription6m": "6 Monate",
+                "subscriptionLifetime": "Lebenslang",
+                "formDiscordLabel": "Geben Sie Ihren Discord-Namen ein",
+                "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein. Valve-bezogene (Steam, Valve, CS) und russische Dienste (Yandex, Mail.ru usw.) werden nicht unterstützt.",
+                "purchaseMessage": "Bitte schreiben Sie <code>_romkar_</code> in Discord, um mit der Zahlung fortzufahren, oder sie werden Sie kontaktieren.",
+                "backBtn": "🔙 Zurück",
+                "showMore": "Mehr anzeigen",
+                "showLess": "Weniger anzeigen",
+                notifications: "Benachrichtigungen",
+                markAllRead: "Alle als gelesen markieren",
+                clearAll: "Alle löschen",
+                noNotifications: "Keine Benachrichtigungen",
+                notificationTypes: {
+                    info: "INFO",
+                    success: "ERFOLG",
+                    warning: "WARNUNG",
+                    error: "FEHLER",
+                    banned: "ZUGRIFF VERWEIGERT"
+                },
+                notificationModalTitle: "Benachrichtigungsdetails",
+                notificationDelete: "Löschen",
+                notificationClose: "Schließen",
+                notificationTimeJustNow: "Gerade eben",
+                notificationTimeMinAgo: "Minuten her",
+                notificationTimeHoursAgo: "Std. her",
+                notificationTimeDaysAgo: "Tage her",
+                "tableHeaders": ["Funktion", "Beschreibung", "Warum einzigartig in vurhizz hack", "In anderen externen utils"],
+                "tableRows": {
+                    "soundESP": {
+                        "function": "Sound ESP",
+                        "description": "Erkennt, wann du die Schritte oder Aktionen von Gegnern hören kannst, und verbessert die Situationswahrnehmung.",
+                        "unique": "Technisch anspruchsvolle Funktion für externe utils, präzise für audio-basierte Wahrnehmung implementiert.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "zoomEtc": {
+                        "function": "Zoom, Defuser, Kauf, Munition, Ping, Geld usw.",
+                        "description": "Bietet detaillierte Informationen über Gegner, einschließlich Zoom, Defuser, Munition, Ping, Geld und mehr.",
+                        "unique": "Verfolgt bis zu 10 Attribute, einschließlich einzigartiger wie Munitionsbalken und Ping, und konkurriert mit internen utils.",
+                        "other": "Begrenzt auf grundlegende Attribute wie Zoom, Defuser oder Geld."
+                    },
+                    "silentAim": {
+                        "function": "Silent Aimbot mit Parametern",
+                        "description": "Erweiterter Silent Aimbot mit anpassbaren Einstellungen für höhere Präzision.",
+                        "unique": "Enthält WallForce für automatische Wanddurchschüsse und bSilent für glatteres Zielen, imitiert internen Silent Aimbot.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "fov180": {
+                        "function": "Aimbot-FOV bis 180°",
+                        "description": "Ermöglicht dem Aimbot, auf der gesamten Karte mit einem einstellbaren Sichtfeld zu funktionieren.",
+                        "unique": "Unterstützt FOV bis 180°, deckt die gesamte Karte ab, im Gegensatz zu typischen Einschränkungen.",
+                        "other": "Begrenzt auf 30°–90° FOV."
+                    },
+                    "overrideFov": {
+                        "function": "Aimbot-FOV-Überschreibung",
+                        "description": "Ändert das FOV des Aimbots während des Spiels mit einer Hotkey.",
+                        "unique": "Erlaubt sofortige Anpassung des FOV von jedem Wert zu jedem Wert (z. B. 10° bis 180°) über Hotkey für entscheidende Momente.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "antiAim": {
+                        "function": "Anti-Aim",
+                        "description": "Stört das Zielen der Gegner mit Anti-Aim-Techniken, ohne korrekte Kameraansicht.",
+                        "unique": "Effektiv gegen andere externe utils und schwächere interne, eine seltene Funktion für externe.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "fakeRapidFire": {
+                        "function": "Fake Rapid Fire",
+                        "description": "Simuliert visuell das Abfeuern von bis zu 30 Kugeln pro Sekunde mit jeder Waffe.",
+                        "unique": "Einzigartiger visueller Effekt für kreatives Gameplay, nicht in anderen utils vorhanden.",
+                        "other": "Nicht verfügbar, auch nicht in internen utils."
+                    },
+                    "hitboxes": {
+                        "function": "27 Aimbot-Hitboxes + Überschreibung",
+                        "description": "Hohe Präzision beim Zielen mit 27 Hitbox-Optionen und dynamischem Wechsel.",
+                        "unique": "Bietet 27 Hitboxes mit einer Überschreibungsfunktion, um Ziele ohne Menüs zu ändern, übertrifft Standardangebote.",
+                        "other": "Bis zu 14 Hitboxes."
+                    },
+                    "humanization": {
+                        "function": "Aimbot-Menschlichkeit",
+                        "description": "Erweiterte Menschlichkeit für RAGE- und LEGIT-Modi, um Erkennung zu vermeiden.",
+                        "unique": "Detaillierte Menschlichkeit gewährleistet sichereres Gameplay, anders als bei den meisten externen utils.",
+                        "other": "Nicht in den meisten externen verwendet, was sie weniger sicher macht."
+                    },
+                    "knifeBot": {
+                        "function": "Messer/Zeus-Bot",
+                        "description": "Automatisiert Messer- und Zeus-Kämpfe für konsistente Siege.",
+                        "unique": "Exklusive Funktion, die Dominanz in Messer- oder Zeus-Runden sicherstellt.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "airFlashCheck": {
+                        "function": "Luft-/Flash- & Sichtprüfung",
+                        "description": "Sichert vollständig legitimes Gameplay mit Prüfungen auf Luftgegner, Flash-Effekte und Sichtbarkeit.",
+                        "unique": "Hochdetaillierte Einstellungen, die mehrere Prüfungen kombinieren für präzises legitimes Spiel.",
+                        "other": "Begrenzt auf entweder Flash- oder Sichtprüfungen."
+                    },
+                    "hitSound": {
+                        "function": "Treffer-Sound/Marker",
+                        "description": "Audio- und visuelle Hinweise, wenn du Gegnern Schaden zufügst.",
+                        "unique": "Seltene Funktion für externe, verbessert das Feedback für besseres Spielbewusstsein.",
+                        "other": "Nicht häufig verwendet; nur in Spurdo."
+                    },
+                    "duckPeek": {
+                        "function": "Duck Peek Aimbot-Hilfe",
+                        "description": "Verbessert die Aimbot-Genauigkeit beim Ducken, übernommen aus internen utils.",
+                        "unique": "Fast perfekte Übertragung einer internen util-Funktion, einzigartig für vurhizz hack.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "fovChanger": {
+                        "function": "FOV Changer",
+                        "description": "Passt das Sichtfeld im Spiel an, um interne utils nachzuahmen.",
+                        "unique": "Imitiert die FOV-Anpassung interner utils, eine seltene Funktion für externe.",
+                        "other": "Selten verfügbar."
+                    },
+                    "killEffect": {
+                        "function": "Kill Effect",
+                        "description": "Fügt visuelle Effekte bei Kills für montageartiges Gameplay hinzu.",
+                        "unique": "Einzigartige Funktion für Montage-Erstellung, vollständig anpassbar, nicht in ernsten utils vorhanden.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "motionBars": {
+                        "function": "Motion Bars",
+                        "description": "Fügt kinematografische Bewegungsleisten-Effekte für ein filmisches Erlebnis hinzu.",
+                        "unique": "Exklusive Funktion für montageartiges Gameplay, vollständig anpassbar.",
+                        "other": "Nicht verfügbar."
+                    },
+                    "radarHack": {
+                        "function": "Radar-Hack mit In-Game-Radar",
+                        "description": "Zeigt Gegner auf dem In-Game-Radar an, kein Overlay.",
+                        "unique": "Verwendet den In-Game-Radar für ein nahtloses Erlebnis, im Gegensatz zu typischen externen Overlays.",
+                        "other": "Verwendet typischerweise Fenster externer Overlays."
+                    },
+                    "customCrosshair": {
+                        "function": "Custom Crosshair",
+                        "description": "Entwerfe dein eigenes Fadenkreuz, von einfach bis komplex.",
+                        "unique": "Hochgradig anpassbare Fadenkreuz-Erstellung, eine einzigartige Funktion für externe utils.",
+                        "other": "Nicht häufig verfügbar; nur in Spurdo."
+                    },
+                    "themes": {
+                        "function": "35 Themen + Benutzerdefiniert",
+                        "description": "Passe das Aussehen des util-Menüs vollständig an, von Farben bis Hintergründe.",
+                        "unique": "Bietet 35 Themen plus volle Anpassung, gibt volle Kontrolle über die UI.",
+                        "other": "Nicht verfügbar."
+                    }
+                }
+            },
+            "zh": {
+                "logoText": "vurhizz hack",
+                "heroTitle": "vurhizz hack CS2",
+                "heroSubtitle": "CS2 最佳外部产品之一",
+                "sectionWhy": "为何选择 vurhizz hack？",
+                "featureSecurity": "安全性",
+                "featureSecurityDesc": "我们注重用户账户安全，力求提供最大可靠性。",
+                "featureAffordable": "实惠价格",
+                "featureAffordableDesc": "我们的产品价格相比市场其他产品相当低。",
+                "featureEasy": "易于使用",
+                "featureEasyDesc": "我们的安装程序和产品界面美观且简单，您不会迷失其中。",
+                "featureAutoUpdate": "自动更新偏移量",
+                "featureAutoUpdateDesc": "我们在游戏更新后20分钟内更新作弊的偏移量。",
+                "featureCustomization": "自定义与设计",
+                "featureCustomizationDesc": "每个功能和视觉元素均可自定义 - 从按键和颜色到作弊菜单的完整UI风格。",
+                "featurePerformance": "性能优化",
+                "featurePerformanceDesc": "这是最佳优化的外部产品之一 - 最小CPU使用率，稳定FPS，即便在低端PC上也能流畅运行。",
+                featureAdvanced: "最先进的外部工具",
+                featureAdvancedDesc: "市场上功能最丰富的外部工具，具备接近内部工具的功能以及180° FOV瞄准能力。",
+                featureActiveDev: "活跃开发",
+                featureActiveDevDesc: "持续更新、新功能以及响应迅速的支持团队，致力于提升用户体验。",
+                "sectionGallery": "图库",
+                "sectionUniqueness": "为何我们的产品独特",
+                "helpCenter": "帮助中心",
+                "navutils": "我们的产品",
+                "navDownload": "下载启动器",
+                navForum: "论坛",
+                navAccount: "账户",
+                navLogin: "登录",
+                navLogout: "退出",
+                "utilTitle": "CS2",
+                "utilDesc": "Counter-Strike 2 的高级外部产品",
+                "buySubscription": "发送购买请求",
+                "formTitle": "发送购买请求",
+                "formDurationLabel": "选择订阅时长",
+                "subscription7d": "7天",
+                "subscription14d": "14天",
+                "subscription1m": "1个月",
+                "subscription3m": "2个月",
+                "subscription6m": "6个月",
+                "subscriptionLifetime": "终身",
+                "formDiscordLabel": "输入您的 Discord 用户名",
+                "emailError": "请输入有效的电子邮件地址。Valve相关（Steam, Valve, CS）以及俄罗斯服务（Yandex, Mail.ru 等）不受支持。",
+                "purchaseMessage": "请在 Discord 中输入 <code>_romkar_</code> 以继续付款，否则他们会联系您。",
+                "backBtn": "🔙 返回",
+                "showMore": "显示更多",
+                "showLess": "显示更少",
+                notifications: "通知",
+                markAllRead: "全部标记为已读",
+                clearAll: "全部清除",
+                noNotifications: "暂无通知",
+                notificationTypes: {
+                    info: "信息",
+                    success: "成功",
+                    warning: "警告",
+                    error: "错误",
+                    banned: "拒绝访问"
+                },
+                notificationModalTitle: "通知详情",
+                notificationDelete: "删除",
+                notificationClose: "关闭",
+                notificationTimeJustNow: "刚刚",
+                notificationTimeMinAgo: "分钟前",
+                notificationTimeHoursAgo: "小时前",
+                notificationTimeDaysAgo: "天前",
+                "tableHeaders": ["功能", "描述", "为何在 vurhizz hack 中独特", "在其他外部产品中"],
+                "tableRows": {
+                    "soundESP": {
+                        "function": "声音ESP",
+                        "description": "检测你何时能听到敌人的脚步或动作，增强态势感知。",
+                        "unique": "对于外部产品来说技术上具有挑战性，以高精度实现基于音频的感知。",
+                        "other": "不可用。"
+                    },
+                    "zoomEtc": {
+                        "function": "缩放，拆弹器，购买，弹药，延迟，金钱等",
+                        "description": "提供敌人详细信息，包括缩放，拆弹器，弹药，延迟，金钱等。",
+                        "unique": "跟踪高达10个属性，包括独特的弹药条和延迟，与内部产品相媲美。",
+                        "other": "仅限于基本属性如缩放，拆弹器或金钱。"
+                    },
+                    "silentAim": {
+                        "function": "带参数的静默瞄准机器人",
+                        "description": "高级静默瞄准机器人，具备可定制设置以增强精度。",
+                        "unique": "包括WallForce用于自动穿墙和bSilent用于更顺滑的瞄准，模仿内部静默瞄准。",
+                        "other": "不可用。"
+                    },
+                    "fov180": {
+                        "function": "瞄准机器人视野高达180°",
+                        "description": "允许瞄准机器人覆盖整个地图，具有可调节的视野。",
+                        "unique": "支持高达180°的视野，覆盖整个地图，不同于典型的限制。",
+                        "other": "限于30°–90°视野。"
+                    },
+                    "overrideFov": {
+                        "function": "覆盖瞄准机器人视野",
+                        "description": "通过热键在游戏中实时更改瞄准机器人视野。",
+                        "unique": "通过热键即时调整视野从任意值到任意值（例如10°到180°），适用于关键时刻。",
+                        "other": "不可用。"
+                    },
+                    "antiAim": {
+                        "function": "反瞄准",
+                        "description": "通过反瞄准技术干扰敌人的瞄准，没有正确的摄像头视角。",
+                        "unique": "对其他外部产品和较弱的内部产品有效，是外部产品中罕见的功能。",
+                        "other": "不可用。"
+                    },
+                    "fakeRapidFire": {
+                        "function": "Fake Rapid Fire",
+                        "description": "视觉上模拟使用任何武器每秒射击高达30发子弹。",
+                        "unique": "独特的视觉效果，适用于创意游戏，在任何产品中未见。",
+                        "other": "不可用，即使在内部产品中。"
+                    },
+                    "hitboxes": {
+                        "function": "27个瞄准机器人命中箱+覆盖",
+                        "description": "高精度瞄准机器人，具备27个命中箱选项和动态切换。",
+                        "unique": "提供27个命中箱，包含覆盖功能可在无需菜单的情况下更改目标，超越标准提供。",
+                        "other": "高达14个命中箱。"
+                    },
+                    "humanization": {
+                        "function": "瞄准机器人人性化",
+                        "description": "为RAGE和LEGIT模式提供高级人性化以避免检测。",
+                        "unique": "详细的人性化确保更安全的游戏体验，不同于大多数外部产品。",
+                        "other": "在大多数外部中未使用，使其安全性较低。"
+                    },
+                    "knifeBot": {
+                        "function": "刀/宙斯机器人",
+                        "description": "自动执行刀和宙斯战斗以确保持续胜利。",
+                        "unique": "独家功能，确保在刀或宙斯回合中占据主导地位。",
+                        "other": "不可用。"
+                    },
+                    "airFlashCheck": {
+                        "function": "空中/闪光 & 可见性检查",
+                        "description": "通过检查空中敌人，闪光效果和可见性，确保完全合法的游戏体验。",
+                        "unique": "高度详细的设置，结合多种检查以实现精确的合法游戏。",
+                        "other": "仅限于闪光或可见性检查之一。"
+                    },
+                    "hitSound": {
+                        "function": "命中声音/标记",
+                        "description": "当你对敌人造成伤害时提供音频和视觉提示。",
+                        "unique": "对于外部来说是罕见的功能，增强了更好的游戏意识反馈。",
+                        "other": "不常见使用；仅在Spurdo中。"
+                    },
+                    "duckPeek": {
+                        "function": "蹲下瞄准机器人辅助",
+                        "description": "改善蹲下时的瞄准机器人精度，移植自内部产品。",
+                        "unique": "近乎完美的内部产品功能移植，对于vurhizz hack是独一无二的。",
+                        "other": "不可用。"
+                    },
+                    "fovChanger": {
+                        "function": "FOV Changer",
+                        "description": "调整游戏内视野，模仿内部产品。",
+                        "unique": "复制内部产品的视野定制，外部产品中罕见的功能。",
+                        "other": "很少可用。"
+                    },
+                    "killEffect": {
+                        "function": "Kill Effect",
+                        "description": "在击杀时添加视觉效果，适用于蒙太奇风格的游戏。",
+                        "unique": "独特的功能用于蒙太奇创建，完全可定制，不见于严肃产品。",
+                        "other": "不可用。"
+                    },
+                    "motionBars": {
+                        "function": "Motion Bars",
+                        "description": "添加电影般的动态条效果，带来电影般的体验。",
+                        "unique": "专属功能，适用于蒙太奇风格的游戏，完全可定制。",
+                        "other": "不可用。"
+                    },
+                    "radarHack": {
+                        "function": "带游戏雷达的雷达黑客",
+                        "description": "在游戏雷达上显示敌人，而不是覆盖层。",
+                        "unique": "使用游戏雷达提供无缝体验，不同于典型的外部覆盖层。",
+                        "other": "通常使用外部覆盖层窗口。"
+                    },
+                    "customCrosshair": {
+                        "function": "Custom Crosshair",
+                        "description": "设计你自己的准星，从简单到复杂的样式。",
+                        "unique": "高度可定制的准星创建，外部产品中独特的功能。",
+                        "other": "不常见可用；仅在Spurdo中。"
+                    },
+                    "themes": {
+                        "function": "35主题+自定义",
+                        "description": "完全自定义产品菜单的外观，从颜色到背景。",
+                        "unique": "提供35个主题加上完全自定义，给予UI完全控制权。",
+                        "other": "不可用。"
+                    }
+                }
+            }
+        };
+
+        function changeLanguage(lang) {
+            localStorage.setItem('language', lang);
+            updateContent(lang);
+        }
+
+        function updateContent(lang) {
+            const t = translations[lang];
+
+            document.querySelector('.logo-text').textContent = t.logoText;
+            document.querySelector('.help-center-link').textContent = t.helpCenter;
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                const href = btn.getAttribute('href') || '';
+                const text = btn.textContent.trim();
+
+                if (href.includes('forum.php')) {
+                    btn.textContent = t.navForum;
+                } else if (href.includes('account.php')) {
+                    btn.textContent = t.navAccount;
+                } else if (href.includes('login.php')) {
+                    btn.textContent = t.navLogin;
+                } else if (href.includes('logout.php')) {
+                    btn.textContent = t.navLogout;
+                } else if (href.includes('register.php')) {
+                    btn.textContent = t.navRegister || text;
+                } else if (text === 'OUR PRODUCTS' || text.toUpperCase() === 'OUR PRODUCTS') {
+                    btn.textContent = t.navutils;
+                } else if (text.includes('DOWNLOAD LAUNCHER') || text === 'DOWNLOAD LAUNCHER') {
+                    btn.textContent = t.navDownload;
+                }
+            });
+
+            document.querySelector('.notifications-title').textContent = t.notifications;
+            document.getElementById('markAllReadBtn').textContent = t.markAllRead;
+            document.getElementById('clearAllBtn').textContent = t.clearAll;
+
+            document.querySelector('.hero h1').textContent = t.heroTitle;
+            document.querySelector('.subtitle').textContent = t.heroSubtitle;
+
+            document.querySelector('.section-title').textContent = t.sectionWhy;
+            document.querySelectorAll('.feature-title')[0].textContent = t.featureSecurity;
+            document.querySelectorAll('.feature-description')[0].textContent = t.featureSecurityDesc;
+            document.querySelectorAll('.feature-title')[1].textContent = t.featureAffordable;
+            document.querySelectorAll('.feature-description')[1].textContent = t.featureAffordableDesc;
+            document.querySelectorAll('.feature-title')[2].textContent = t.featureEasy;
+            document.querySelectorAll('.feature-description')[2].textContent = t.featureEasyDesc;
+            document.querySelectorAll('.feature-title')[3].textContent = t.featureAutoUpdate;
+            document.querySelectorAll('.feature-description')[3].textContent = t.featureAutoUpdateDesc;
+            document.querySelectorAll('.feature-title')[4].textContent = t.featureCustomization;
+            document.querySelectorAll('.feature-description')[4].textContent = t.featureCustomizationDesc;
+            document.querySelectorAll('.feature-title')[5].textContent = t.featurePerformance;
+            document.querySelectorAll('.feature-description')[5].textContent = t.featurePerformanceDesc;
+            document.querySelectorAll('.feature-title')[6].textContent = t.featureAdvanced;
+            document.querySelectorAll('.feature-description')[6].textContent = t.featureAdvancedDesc;
+            document.querySelectorAll('.feature-title')[7].textContent = t.featureActiveDev;
+            document.querySelectorAll('.feature-description')[7].textContent = t.featureActiveDevDesc;
+
+            document.querySelectorAll('.section-title')[1].textContent = t.sectionGallery;
+            document.querySelectorAll('.section-title')[2].textContent = t.sectionUniqueness;
+
+            const headers = document.querySelectorAll('.uniqueness-table th');
+            headers[0].textContent = t.tableHeaders[0];
+            headers[1].textContent = t.tableHeaders[1];
+            headers[2].textContent = t.tableHeaders[2];
+            headers[3].textContent = t.tableHeaders[3];
+
+            const rows = document.querySelectorAll('.uniqueness-table tbody tr');
+            rows.forEach((row, index) => {
+                const cells = row.querySelectorAll('td');
+                switch (index) {
+                    case 0:
+                        cells[0].textContent = t.tableRows.soundESP.function;
+                        cells[1].textContent = t.tableRows.soundESP.description;
+                        cells[2].textContent = t.tableRows.soundESP.unique;
+                        cells[3].textContent = t.tableRows.soundESP.other;
+                        break;
+                    case 1:
+                        cells[0].textContent = t.tableRows.zoomEtc.function;
+                        cells[1].textContent = t.tableRows.zoomEtc.description;
+                        cells[2].textContent = t.tableRows.zoomEtc.unique;
+                        cells[3].textContent = t.tableRows.zoomEtc.other;
+                        break;
+                    case 2:
+                        cells[0].textContent = t.tableRows.silentAim.function;
+                        cells[1].textContent = t.tableRows.silentAim.description;
+                        cells[2].textContent = t.tableRows.silentAim.unique;
+                        cells[3].textContent = t.tableRows.silentAim.other;
+                        break;
+                    case 3:
+                        cells[0].textContent = t.tableRows.fov180.function;
+                        cells[1].textContent = t.tableRows.fov180.description;
+                        cells[2].textContent = t.tableRows.fov180.unique;
+                        cells[3].textContent = t.tableRows.fov180.other;
+                        break;
+                    case 4:
+                        cells[0].textContent = t.tableRows.overrideFov.function;
+                        cells[1].textContent = t.tableRows.overrideFov.description;
+                        cells[2].textContent = t.tableRows.overrideFov.unique;
+                        cells[3].textContent = t.tableRows.overrideFov.other;
+                        break;
+                    case 5:
+                        cells[0].textContent = t.tableRows.antiAim.function;
+                        cells[1].textContent = t.tableRows.antiAim.description;
+                        cells[2].textContent = t.tableRows.antiAim.unique;
+                        cells[3].textContent = t.tableRows.antiAim.other;
+                        break;
+                    case 6:
+                        cells[0].textContent = t.tableRows.fakeRapidFire.function;
+                        cells[1].textContent = t.tableRows.fakeRapidFire.description;
+                        cells[2].textContent = t.tableRows.fakeRapidFire.unique;
+                        cells[3].textContent = t.tableRows.fakeRapidFire.other;
+                        break;
+                    case 7:
+                        cells[0].textContent = t.tableRows.hitboxes.function;
+                        cells[1].textContent = t.tableRows.hitboxes.description;
+                        cells[2].textContent = t.tableRows.hitboxes.unique;
+                        cells[3].textContent = t.tableRows.hitboxes.other;
+                        break;
+                    case 8:
+                        cells[0].textContent = t.tableRows.humanization.function;
+                        cells[1].textContent = t.tableRows.humanization.description;
+                        cells[2].textContent = t.tableRows.humanization.unique;
+                        cells[3].textContent = t.tableRows.humanization.other;
+                        break;
+                    case 9:
+                        cells[0].textContent = t.tableRows.knifeBot.function;
+                        cells[1].textContent = t.tableRows.knifeBot.description;
+                        cells[2].textContent = t.tableRows.knifeBot.unique;
+                        cells[3].textContent = t.tableRows.knifeBot.other;
+                        break;
+                    case 10:
+                        cells[0].textContent = t.tableRows.airFlashCheck.function;
+                        cells[1].textContent = t.tableRows.airFlashCheck.description;
+                        cells[2].textContent = t.tableRows.airFlashCheck.unique;
+                        cells[3].textContent = t.tableRows.airFlashCheck.other;
+                        break;
+                    case 11:
+                        cells[0].textContent = t.tableRows.hitSound.function;
+                        cells[1].textContent = t.tableRows.hitSound.description;
+                        cells[2].textContent = t.tableRows.hitSound.unique;
+                        cells[3].textContent = t.tableRows.hitSound.other;
+                        break;
+                    case 12:
+                        cells[0].textContent = t.tableRows.duckPeek.function;
+                        cells[1].textContent = t.tableRows.duckPeek.description;
+                        cells[2].textContent = t.tableRows.duckPeek.unique;
+                        cells[3].textContent = t.tableRows.duckPeek.other;
+                        break;
+                    case 13:
+                        cells[0].textContent = t.tableRows.fovChanger.function;
+                        cells[1].textContent = t.tableRows.fovChanger.description;
+                        cells[2].textContent = t.tableRows.fovChanger.unique;
+                        cells[3].textContent = t.tableRows.fovChanger.other;
+                        break;
+                    case 14:
+                        cells[0].textContent = t.tableRows.killEffect.function;
+                        cells[1].textContent = t.tableRows.killEffect.description;
+                        cells[2].textContent = t.tableRows.killEffect.unique;
+                        cells[3].textContent = t.tableRows.killEffect.other;
+                        break;
+                    case 15:
+                        cells[0].textContent = t.tableRows.motionBars.function;
+                        cells[1].textContent = t.tableRows.motionBars.description;
+                        cells[2].textContent = t.tableRows.motionBars.unique;
+                        cells[3].textContent = t.tableRows.motionBars.other;
+                        break;
+                    case 16:
+                        cells[0].textContent = t.tableRows.radarHack.function;
+                        cells[1].textContent = t.tableRows.radarHack.description;
+                        cells[2].textContent = t.tableRows.radarHack.unique;
+                        cells[3].textContent = t.tableRows.radarHack.other;
+                        break;
+                    case 17:
+                        cells[0].textContent = t.tableRows.customCrosshair.function;
+                        cells[1].textContent = t.tableRows.customCrosshair.description;
+                        cells[2].textContent = t.tableRows.customCrosshair.unique;
+                        cells[3].textContent = t.tableRows.customCrosshair.other;
+                        break;
+                    case 18:
+                        cells[0].textContent = t.tableRows.themes.function;
+                        cells[1].textContent = t.tableRows.themes.description;
+                        cells[2].textContent = t.tableRows.themes.unique;
+                        cells[3].textContent = t.tableRows.themes.other;
+                        break;
+                }
+            });
+
+            const toggleBtn = document.getElementById('toggleTable');
+            toggleBtn.textContent = rows[2].classList.contains('hidden') ? t.showMore : t.showLess;
+
+            document.querySelector('.util-title').textContent = t.utilTitle;
+            document.querySelector('.util-description').textContent = t.utilDesc;
+            document.querySelector('.buy-btn').textContent = t.buySubscription;
+
+            document.querySelector('.form-title').textContent = t.formTitle;
+            document.querySelector('.form-label').textContent = t.formDurationLabel;
+            document.querySelectorAll('.subscription-btn')[0].textContent = t.subscription7d;
+            document.querySelectorAll('.subscription-btn')[1].textContent = t.subscription14d;
+            document.querySelectorAll('.subscription-btn')[2].textContent = t.subscription1m;
+            document.querySelectorAll('.subscription-btn')[3].textContent = t.subscription3m;
+            document.querySelectorAll('.subscription-btn')[4].textContent = t.subscription6m;
+            document.querySelectorAll('.subscription-btn')[5].textContent = t.subscriptionLifetime;
+            document.querySelectorAll('.form-label')[1].textContent = t.formDiscordLabel;
+            document.getElementById('email-error').textContent = t.emailError;
+            document.querySelector('.purchase-message p').innerHTML = t.purchaseMessage;
+            document.querySelectorAll('.back-btn')[0].textContent = t.backBtn;
+            document.querySelectorAll('.back-btn')[1].textContent = t.backBtn;
+
+            if (document.querySelector('.uniqueness-table tbody tr.hidden') === null) {
+                toggleTable();
+                setTimeout(toggleTable, 400);
+            }
+        }
+
+        (function() {
+            const bell = document.getElementById('notificationsBell');
+            const dropdown = document.getElementById('notificationsDropdown');
+            const badge = document.getElementById('notificationsBadge');
+            const notificationsList = document.getElementById('notificationsList');
+            const markAllReadBtn = document.getElementById('markAllReadBtn');
+            const clearAllBtn = document.getElementById('clearAllBtn');
+            
+            const modal = document.getElementById('notificationModal');
+            const modalClose = document.getElementById('notificationModalClose');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            const modalDeleteBtn = document.getElementById('modalDeleteBtn');
+            const modalTitle = document.getElementById('modalNotificationTitle');
+            const modalType = document.getElementById('modalNotificationType');
+            const modalTime = document.getElementById('modalNotificationTime');
+            const modalMessage = document.getElementById('modalNotificationMessage');
+            
+            let currentNotificationId = null;
+            
+            if (!bell) return;
+            
+            function formatTime(timeString) {
+                const date = new Date(timeString);
+                
+                if (isNaN(date.getTime())) {
+                    return 'Unknown';
+                }
+                
+                const now = new Date();
+                const diffMs = now - date;
+                const diffMins = Math.floor(diffMs / 60000);
+                const diffHours = Math.floor(diffMs / 3600000);
+                const diffDays = Math.floor(diffMs / 86400000);
+                
+                if (diffMins < 1) return 'Just now';
+                if (diffMins < 60) return `${diffMins} min ago`;
+                if (diffHours < 24) return `${diffHours}h ago`;
+                if (diffDays < 7) return `${diffDays}d ago`;
+                
+                return date.toLocaleDateString();
+            }
+
+            async function loadNotifications() {
+                try {
+                    const response = await fetch('notifications_api.php?action=get');
+                    const data = await response.json();
+                    
+                    if (data.status === 'success') {
+                        updateBadge(data.unread_count);
+                        renderNotifications(data.notifications);
+                    }
+                } catch (error) {
+                    console.error('Error loading notifications:', error);
+                }
+            }
+            
+            function updateBadge(count) {
+                if (count > 0) {
+                    badge.textContent = count > 99 ? '99+' : count;
+                    badge.style.display = 'flex';
+                } else {
+                    badge.style.display = 'none';
+                }
+            }
+            
+            function renderNotifications(notifications) {
+                if (notifications.length === 0) {
+                    notificationsList.innerHTML = `
+                        <div class="notifications-empty">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                            </svg>
+                            <p>${t.noNotifications}</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                notificationsList.innerHTML = notifications.map(notif => `
+                    <div class="notification-item ${notif.read ? '' : 'unread'}" data-id="${notif.id}">
+                        <div class="notification-content">
+                            <span class="notification-type ${notif.type}">${notif.type.toUpperCase()}</span>
+                            <div class="notification-item-title">${escapeHtml(notif.title)}</div>
+                            <div class="notification-item-message">${escapeHtml(notif.message)}</div>
+                            <div class="notification-item-time">${formatTime(notif.created_at)}</div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                document.querySelectorAll('.notification-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const id = item.dataset.id;
+                        const notif = notifications.find(n => n.id === id);
+                        if (notif) {
+                            openNotificationModal(notif);
+                        }
+                    });
+                });
+            }
+            
+            function openNotificationModal(notif) {
+                currentNotificationId = notif.id;
+                modalTitle.textContent = notif.title;
+                modalType.textContent = notif.type.toUpperCase();
+                modalType.className = 'notification-type ' + notif.type;
+                modalTime.textContent = formatTime(notif.created_at);
+                modalMessage.textContent = notif.message;
+                
+                modal.classList.add('active');
+                dropdown.classList.remove('active');
+
+                modalTitle.textContent = notif.title;
+                modalType.textContent = t.notificationTypes[notif.type.toLowerCase()] || notif.type.toUpperCase();
+                
+                if (!notif.read) {
+                    markAsRead(notif.id);
+                }
+            }
+            
+            function closeNotificationModal() {
+                modal.classList.remove('active');
+                currentNotificationId = null;
+            }
+            
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+            
+            async function markAsRead(id) {
+                try {
+                    const response = await fetch(`notifications_api.php?action=mark_read&id=${id}`);
+                    const data = await response.json();
+                    if (data.status === 'success') {
+                        updateBadge(data.unread_count);
+                        loadNotifications();
+                    }
+                } catch (error) {
+                    console.error('Error marking as read:', error);
+                }
+            }
+            
+            async function markAllAsRead() {
+                try {
+                    const response = await fetch('notifications_api.php?action=mark_all_read');
+                    const data = await response.json();
+                    if (data.status === 'success') {
+                        updateBadge(0);
+                        loadNotifications();
+                    }
+                } catch (error) {
+                    console.error('Error marking all as read:', error);
+                }
+            }
+            
+            async function deleteNotification(id) {
+                try {
+                    const response = await fetch(`notifications_api.php?action=delete&id=${id}`);
+                    const data = await response.json();
+                    if (data.status === 'success') {
+                        updateBadge(data.unread_count);
+                        loadNotifications();
+                        closeNotificationModal();
+                    }
+                } catch (error) {
+                    console.error('Error deleting notification:', error);
+                }
+            }
+            
+            async function clearAllNotifications() {
+                if (!confirm('Are you sure you want to delete all notifications?')) {
+                    return;
+                }
+                
+                try {
+                    const response = await fetch('notifications_api.php?action=clear_all');
+                    const data = await response.json();
+                    if (data.status === 'success') {
+                        updateBadge(0);
+                        loadNotifications();
+                    }
+                } catch (error) {
+                    console.error('Error clearing all notifications:', error);
+                }
+            }
+            
+            bell.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+            
+            markAllReadBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                markAllAsRead();
+            });
+            
+            clearAllBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                clearAllNotifications();
+            });
+            
+            modalClose.addEventListener('click', closeNotificationModal);
+            
+            modalDeleteBtn.addEventListener('click', () => {
+                if (currentNotificationId) {
+                    deleteNotification(currentNotificationId);
+                }
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!bell.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
+                
+                if (e.target === modal) {
+                    closeNotificationModal();
+                }
+            });
+            
+            loadNotifications();
+            
+            setInterval(loadNotifications, 30000);
+        })();
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.getElementById('languageSelect').value = savedLang;
+            updateContent(savedLang);
+
+            document.querySelectorAll('.subscription-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const price = parseInt(btn.getAttribute('onclick').match(/\d+/)[0]);
+                    selectPlan(btn, price, btn.textContent);
+                });
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('buyBtn').addEventListener('click', async function(e) {
+            e.preventDefault();
+
+            try {
+                const response = await fetch('check_session.php', {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+
+                if (data.logged_in) {
+                    showPurchase(e);
+                } else {
+                    window.location.href = 'register.php';
+                }
+            } catch (err) {
+                window.location.href = 'register.php';
+            }
+        });
+      
+        function createSnowEffect() {
+            const now = new Date();
+            const month = now.getMonth();
+            const day = now.getDate();
+            
+            const isSnowSeason = (month === 11 && day >= 15) || (month === 0 && day <= 15);
+            
+            if (!isSnowSeason) return;
+            
+            const snowContainer = document.createElement('div');
+            snowContainer.id = 'snow-container';
+            snowContainer.style.position = 'fixed';
+            snowContainer.style.top = '0';
+            snowContainer.style.left = '0';
+            snowContainer.style.width = '100%';
+            snowContainer.style.height = '100%';
+            snowContainer.style.pointerEvents = 'none';
+            snowContainer.style.zIndex = '9999';
+            document.body.appendChild(snowContainer);
+            
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = '❄';
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDuration = (Math.random() * 10 + 8) + 's';
+                snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+                snowflake.style.fontSize = (Math.random() * 1 + 0.5) + 'em';
+                
+                snowContainer.appendChild(snowflake);
+                
+                setTimeout(() => {
+                    snowflake.remove();
+                }, parseFloat(snowflake.style.animationDuration) * 1000);
+            }
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createSnowflake, i * 300);
+            }
+            
+            setInterval(createSnowflake, 800);
+        }
+
+        createSnowEffect();
+      
+        function activateLoveMode(event) {
+            event.stopPropagation();
+            
+            const heart = document.getElementById('secretHeart');
+            if (!heart) return;
+            
+            const rect = heart.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 30; i++) {
+                const heartParticle = document.createElement('div');
+                heartParticle.className = 'heart-explosion';
+                heartParticle.innerHTML = '❤️';
+                heartParticle.style.position = 'fixed';
+                heartParticle.style.left = centerX + 'px';
+                heartParticle.style.top = centerY + 'px';
+                heartParticle.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                
+                const angle = (Math.PI * 2 * i) / 30;
+                const distance = Math.random() * 300 + 150;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                heartParticle.style.setProperty('--tx', tx + 'px');
+                heartParticle.style.setProperty('--ty', ty + 'px');
+                heartParticle.style.animationDelay = (i * 0.02) + 's';
+                
+                document.body.appendChild(heartParticle);
+                
+                setTimeout(() => heartParticle.remove(), 2200);
+            }
+            
+            setTimeout(() => {
+                document.body.classList.add('love-mode');
+                heart.style.opacity = '0';
+                setTimeout(() => {
+                    heart.style.display = 'none';
+                }, 300);
+            }, 500);
+        }
+        
+        let logoClickCount = 0;
+        let logoClickTimer = null;
+
+        window.addEventListener('DOMContentLoaded', function() {
+            const logo = document.querySelector('.logo');
+            
+            logo.addEventListener('click', () => {
+                logoClickCount++;
+                
+                if (logoClickTimer) clearTimeout(logoClickTimer);
+                
+                if (logoClickCount === 3) {
+                    document.body.classList.remove('love-mode');
+                    const heart = document.getElementById('secretHeart');
+                    if (heart) {
+                        heart.style.display = 'flex';
+                        setTimeout(() => {
+                            heart.style.opacity = '0.6';
+                        }, 10);
+                    }
+                    logoClickCount = 0;
+                }
+                
+                logoClickTimer = setTimeout(() => {
+                    logoClickCount = 0;
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
